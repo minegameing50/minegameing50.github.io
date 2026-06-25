@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Atul Dhanotiya | Portfolio</title>
+  <meta name="description" content="Atul Dhanotiya — BCA student, web developer, and AI enthusiast. Explore my projects, skills, achievements, and get in touch.">
+  <meta name="author" content="Atul Dhanotiya">
+  <meta name="keywords" content="Atul Dhanotiya, portfolio, web developer, AI, BCA, projects, skills">
+  <link rel="icon" type="image/png" href="assets/logo.png">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Atul Dhanotiya | Portfolio">
+  <meta property="og:description" content="Building modern web applications, AI-powered solutions and real-world projects that make a difference.">
+  <meta property="og:image" content="assets/profile.jpg">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="#">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: { inter: ['Inter', 'sans-serif'] }
+        }
+      }
+    }
+  </script>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Custom Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/darkmode.css">
+</head>
+<body class="font-inter">
+
+  <!-- SCROLL PROGRESS BAR -->
+  <div id="scroll-progress" class="scroll-progress"></div>
+
+  <!-- LOADING SCREEN -->
+  <div id="loading-screen" class="loading-screen">
+    <img src="assets/logo.png" alt="AD" class="loading-logo" width="80">
+    <h2 class="font-semibold text-lg mt-4" style="color: var(--text-primary)">Atul Dhanotiya</h2>
+    <p class="text-sm mt-2" style="color: var(--text-secondary)">Loading Portfolio...</p>
+    <div class="loading-bar-container">
+      <div class="loading-bar"></div>
+    </div>
+  </div>
+
+  <!-- NAVBAR -->
+  <nav id="navbar" class="nav-glass">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16">
+
+      <!-- Logo -->
+      <a href="#home">
+        <img src="assets/logo.png" alt="AD" class="h-8 w-auto">
+      </a>
+
+      <!-- Desktop Navigation -->
+      <div class="desktop-nav hidden md:flex gap-1">
+        <a class="nav-link px-3 py-2 rounded-lg text-sm font-medium transition" href="#home" style="color: var(--text-secondary)">Home</a>
+        <a class="nav-link px-3 py-2 rounded-lg text-sm font-medium transition" href="#about" style="color: var(--text-secondary)">About</a>
+        <a class="nav-link px-3 py-2 rounded-lg text-sm font-medium transition" href="#experience" style="color: var(--text-secondary)">Experience</a>
+        <a class="nav-link px-3 py-2 rounded-lg text-sm font-medium transition" href="#skills" style="color: var(--text-secondary)">Skills</a>
+        <a class="nav-link px-3 py-2 rounded-lg text-sm font-medium transition" href="#projects" style="color: var(--text-secondary)">Projects</a>
+        <a class="nav-link px-3 py-2 rounded-lg text-sm font-medium transition" href="#achievements" style="color: var(--text-secondary)">Achievements</a>
+        <a class="nav-link px-3 py-2 rounded-lg text-sm font-medium transition" href="#contact" style="color: var(--text-secondary)">Contact</a>
+      </div>
+
+      <!-- Right Actions -->
+      <div class="flex items-center gap-3">
+        <!-- Theme Toggle -->
+        <button id="theme-toggle" class="p-2 rounded-lg" title="Toggle theme">
+          <i class="fas fa-moon"></i>
+        </button>
+
+        <!-- Resume Button (desktop) -->
+        <a href="#" onclick="alert('Resume will be available soon!'); return false;" class="gradient-btn text-sm py-2 px-4 hidden sm:inline-flex">
+          Resume <i class="fas fa-download ml-1"></i>
+        </a>
+
+        <!-- Hamburger (mobile) -->
+        <button class="hamburger md:hidden" aria-label="Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div id="mobile-menu" class="mobile-menu">
+    <a class="nav-link text-xl py-3" href="#home" style="color: var(--text-secondary)">Home</a>
+    <a class="nav-link text-xl py-3" href="#about" style="color: var(--text-secondary)">About</a>
+    <a class="nav-link text-xl py-3" href="#experience" style="color: var(--text-secondary)">Experience</a>
+    <a class="nav-link text-xl py-3" href="#skills" style="color: var(--text-secondary)">Skills</a>
+    <a class="nav-link text-xl py-3" href="#projects" style="color: var(--text-secondary)">Projects</a>
+    <a class="nav-link text-xl py-3" href="#achievements" style="color: var(--text-secondary)">Achievements</a>
+    <a class="nav-link text-xl py-3" href="#contact" style="color: var(--text-secondary)">Contact</a>
+
+    <div class="flex items-center gap-4 mt-6">
+      <button id="theme-toggle-mobile" class="p-2 rounded-lg" title="Toggle theme">
+        <i class="fas fa-moon"></i>
+      </button>
+      <a href="#" onclick="alert('Resume will be available soon!'); return false;" class="gradient-btn text-sm py-2 px-4">
+        Resume <i class="fas fa-download ml-1"></i>
+      </a>
+    </div>
+  </div>
+
+  <!-- ======================== -->
+  <!-- HERO SECTION -->
+  <!-- ======================== -->
+  <section id="home" class="hero-section section-padding">
+    <!-- Background Floating Shapes -->
+    <div class="floating-shape shape-1"></div>
+    <div class="floating-shape shape-2"></div>
+    <div class="floating-shape shape-3"></div>
+    <div class="floating-shape shape-4"></div>
+
+    <!-- Hero Glow -->
+    <div class="hero-glow"></div>
+    <div class="hero-glow-2"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+
+        <!-- Left Content -->
+        <div class="order-2 lg:order-1">
+          <p class="text-lg mb-2" style="color: var(--text-secondary)">Hi, I'm 👋</p>
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-4">
+            <span class="gradient-text">Atul Dhanotiya</span>
+          </h1>
+          <div class="text-xl sm:text-2xl font-semibold mb-6" style="color: var(--text-secondary)">
+            <span id="typewriter" class="typewriter-text"></span><span class="typewriter-cursor">|</span>
+          </div>
+          <p class="text-base lg:text-lg mb-8 leading-relaxed max-w-xl" style="color: var(--text-secondary)">
+            Building modern web applications, AI-powered solutions and real-world projects that make a difference.
+          </p>
+
+          <!-- CTA Buttons -->
+          <div class="flex flex-wrap gap-4">
+            <a href="#projects" class="gradient-btn btn-glow">
+              <i class="fas fa-rocket mr-2"></i>View Projects
+            </a>
+            <a href="#contact" class="gradient-btn-outline">
+              <i class="fas fa-envelope mr-2"></i>Contact Me
+            </a>
+          </div>
+
+          <!-- Social Links -->
+          <div class="flex gap-4 mt-8">
+            <a href="https://github.com/minegameing50" target="_blank" class="social-link w-10 h-10 rounded-full flex items-center justify-center" title="GitHub" style="border: 1px solid var(--border-color); color: var(--text-secondary)">
+              <i class="fab fa-github text-xl"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/atul-dhanotiya-648481356" target="_blank" class="social-link w-10 h-10 rounded-full flex items-center justify-center" title="LinkedIn" style="border: 1px solid var(--border-color); color: var(--text-secondary)">
+              <i class="fab fa-linkedin text-xl"></i>
+            </a>
+            <a href="https://www.instagram.com/atul_dhanotiya_4422" target="_blank" class="social-link w-10 h-10 rounded-full flex items-center justify-center" title="Instagram" style="border: 1px solid var(--border-color); color: var(--text-secondary)">
+              <i class="fab fa-instagram text-xl"></i>
+            </a>
+            <a href="mailto:atuldhanotiya7@gmail.com" class="social-link w-10 h-10 rounded-full flex items-center justify-center" title="Email" style="border: 1px solid var(--border-color); color: var(--text-secondary)">
+              <i class="fas fa-envelope text-xl"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Right Content — Hero Image -->
+        <div class="order-1 lg:order-2">
+          <div class="hero-image-container">
+            <div class="hero-image-ring"></div>
+            <img src="assets/profile.jpg" alt="Atul Dhanotiya" class="hero-image">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== -->
+  <!-- ABOUT SECTION -->
+  <!-- ======================== -->
+  <section id="about" class="section-padding" style="background: var(--bg-secondary)">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <!-- Section Title -->
+      <h2 class="text-3xl sm:text-4xl font-bold text-center mb-4 reveal" data-reveal="up">
+        <span class="gradient-text">About Me</span>
+      </h2>
+      <p class="text-center mb-12 max-w-2xl mx-auto reveal" data-reveal="up" data-delay="100" style="color: var(--text-secondary)">
+        Get to know me better
+      </p>
+
+      <!-- Info Cards -->
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
+        <!-- Education -->
+        <div class="card-hover text-center reveal" data-reveal="up" data-delay="100">
+          <div class="skill-icon mb-3"><i class="fas fa-graduation-cap"></i></div>
+          <h3 class="font-bold" style="color: var(--text-primary)">BCA</h3>
+          <p class="text-sm" style="color: var(--text-secondary)">Mandsaur University</p>
+        </div>
+        <!-- Location -->
+        <div class="card-hover text-center reveal" data-reveal="up" data-delay="200">
+          <div class="skill-icon mb-3"><i class="fas fa-map-marker-alt"></i></div>
+          <h3 class="font-bold" style="color: var(--text-primary)">Suwasra</h3>
+          <p class="text-sm" style="color: var(--text-secondary)">Madhya Pradesh</p>
+        </div>
+        <!-- CGPA -->
+        <div class="card-hover text-center reveal" data-reveal="up" data-delay="300">
+          <div class="skill-icon mb-3"><i class="fas fa-chart-line"></i></div>
+          <span class="text-2xl font-bold gradient-text">8.45</span>
+          <p class="text-sm" style="color: var(--text-secondary)">Current CGPA</p>
+        </div>
+        <!-- Availability -->
+        <div class="card-hover text-center reveal" data-reveal="up" data-delay="400">
+          <div class="skill-icon mb-3"><i class="fas fa-briefcase"></i></div>
+          <span class="status-badge">Open for Internships</span>
+        </div>
+      </div>
+
+      <!-- Description -->
+      <div class="max-w-3xl mx-auto reveal" data-reveal="up" data-delay="200">
+        <p class="text-base leading-relaxed mb-4" style="color: var(--text-secondary)">
+          I'm a passionate BCA student at Mandsaur University with a deep interest in web development and artificial intelligence. I love building real-world applications that solve meaningful problems and create impact.
+        </p>
+        <p class="text-base leading-relaxed" style="color: var(--text-secondary)">
+          My journey in tech started with curiosity and has evolved into a committed pursuit of excellence. From building AI-powered tools to creating full-stack web applications, I'm constantly pushing the boundaries of what I can create. I'm currently open to internship opportunities where I can contribute and grow.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== -->
+  <!-- EXPERIENCE SECTION -->
+  <!-- ======================== -->
+  <section id="experience" class="section-padding">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <!-- Section Title -->
+      <h2 class="text-3xl sm:text-4xl font-bold text-center mb-4 reveal" data-reveal="up">
+        <span class="gradient-text">Experience</span>
+      </h2>
+      <p class="text-center mb-12 max-w-2xl mx-auto reveal" data-reveal="up" data-delay="100" style="color: var(--text-secondary)">
+        My professional journey
+      </p>
+
+      <!-- Timeline -->
+      <div class="timeline max-w-3xl mx-auto reveal" data-reveal="left">
+        <div class="timeline-item">
+          <div class="timeline-date">2026 - Present</div>
+          <div class="card-hover" style="margin-top: 0.5rem">
+            <div class="flex flex-wrap items-center gap-3 mb-3">
+              <h3 class="text-xl font-bold" style="color: var(--text-primary)">Internshala Student Partner</h3>
+              <span class="px-3 py-1 text-xs font-medium rounded-full" style="background: rgba(var(--primary-rgb), 0.1); color: var(--primary)">Remote</span>
+            </div>
+            <p class="mb-4" style="color: var(--text-secondary)">Internshala</p>
+            <ul class="space-y-2" style="color: var(--text-secondary)">
+              <li class="flex items-start gap-2">
+                <i class="fas fa-check-circle mt-1" style="color: var(--primary)"></i>
+                Student Outreach &amp; Campus Engagement
+              </li>
+              <li class="flex items-start gap-2">
+                <i class="fas fa-check-circle mt-1" style="color: var(--primary)"></i>
+                Promotion Campaigns &amp; Marketing
+              </li>
+              <li class="flex items-start gap-2">
+                <i class="fas fa-check-circle mt-1" style="color: var(--primary)"></i>
+                Event Participation &amp; Coordination
+              </li>
+              <li class="flex items-start gap-2">
+                <i class="fas fa-check-circle mt-1" style="color: var(--primary)"></i>
+                Driving Student Registrations
+              </li>
+              <li class="flex items-start gap-2">
+                <i class="fas fa-check-circle mt-1" style="color: var(--primary)"></i>
+                Community Building &amp; Engagement
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== -->
+  <!-- HACKATHONS SECTION -->
+  <!-- ======================== -->
+  <section id="hackathons" class="section-padding" style="background: var(--bg-secondary)">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <!-- Section Title -->
+      <h2 class="text-3xl sm:text-4xl font-bold text-center mb-4 reveal" data-reveal="up">
+        <span class="gradient-text">Hackathons</span>
+      </h2>
+      <p class="text-center mb-12 max-w-2xl mx-auto reveal" data-reveal="up" data-delay="100" style="color: var(--text-secondary)">
+        Competing and building
+      </p>
+
+      <!-- Hackathon Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+
+        <!-- Card 1 — Google Solution Challenge -->
+        <div class="card-hover reveal" data-reveal="up">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="skill-icon"><i class="fab fa-google"></i></div>
+            <div>
+              <h3 class="font-bold text-lg" style="color: var(--text-primary)">Google Solution Challenge 2026</h3>
+              <p class="text-sm" style="color: var(--text-secondary)">Team HMT CODERS</p>
+            </div>
+          </div>
+          <div class="mb-3">
+            <span class="px-3 py-1 text-xs font-semibold rounded-full" style="background: rgba(234, 179, 8, 0.1); color: #ca8a04;">🏆 Top 106 Teams</span>
+          </div>
+          <p style="color: var(--text-secondary)" class="mb-3">
+            Built BiasGuard AI — an AI-powered tool to detect and mitigate bias in machine learning models and datasets.
+          </p>
+          <div class="flex gap-2">
+            <a href="https://biasguard-ai.onrender.com/" target="_blank" class="text-sm font-medium" style="color: var(--primary)">View Project →</a>
+          </div>
+        </div>
+
+        <!-- Card 2 — Coming Soon -->
+        <div class="card-hover reveal" data-reveal="up" data-delay="200" style="border-style: dashed; opacity: 0.6">
+          <div class="flex items-center justify-center h-full min-h-[200px] flex-col gap-3">
+            <i class="fas fa-plus-circle text-3xl" style="color: var(--text-tertiary)"></i>
+            <p class="font-medium" style="color: var(--text-tertiary)">More hackathons coming soon...</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== -->
+  <!-- SKILLS SECTION -->
+  <!-- ======================== -->
+  <section id="skills" class="section-padding">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <!-- Section Title -->
+      <h2 class="text-3xl sm:text-4xl font-bold text-center mb-4 reveal" data-reveal="up">
+        <span class="gradient-text">Skills &amp; Technologies</span>
+      </h2>
+      <p class="text-center mb-12 max-w-2xl mx-auto reveal" data-reveal="up" data-delay="100" style="color: var(--text-secondary)">
+        Tools I work with
+      </p>
+
+      <!-- Skills Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
+
+        <!-- Programming -->
+        <div class="skill-card card-hover reveal" data-reveal="up" data-delay="100">
+          <div class="skill-icon"><i class="fas fa-code"></i></div>
+          <h3 class="font-bold text-lg mb-4" style="color: var(--text-primary)">Programming</h3>
+          <div class="flex flex-wrap gap-2 justify-center">
+            <span class="px-3 py-1.5 rounded-lg text-sm font-medium" style="background: var(--bg-tertiary); color: var(--text-secondary)">C</span>
+            <span class="px-3 py-1.5 rounded-lg text-sm font-medium" style="background: var(--bg-tertiary); color: var(--text-secondary)">JavaScript</span>
+            <span class="px-3 py-1.5 rounded-lg text-sm font-medium" style="background: var(--bg-tertiary); color: var(--text-secondary)">TypeScript</span>
+          </div>
+        </div>
+
+        <!-- Frontend -->
+        <div class="skill-card card-hover reveal" data-reveal="up" data-delay="200">
+          <div class="skill-icon"><i class="fas fa-palette"></i></div>
+          <h3 class="font-bold text-lg mb-4" style="color: var(--text-primary)">Frontend</h3>
+          <div class="flex flex-wrap gap-2 justify-center">
+            <span class="px-3 py-1.5 rounded-lg text-sm font-medium" style="background: var(--bg-tertiary); color: var(--text-secondary)">HTML</span>
+            <span class="px-3 py-1.5 rounded-lg text-sm font-medium" style="background: var(--bg-tertiary); color: var(--text-secondary)">CSS</span>
+            <span class="px-3 py-1.5 rounded-lg text-sm font-medium" style="background: var(--bg-tertiary); color: var(--text-secondary)">Tailwind CSS</span>
+          </div>
+        </div>
+
+        <!-- Backend -->
+        <div class="skill-card card-hover reveal" data-reveal="up" data-delay="300">
+          <div class="skill-icon"><i class="fas fa-server"></i></div>
+          <h3 class="font-bold text-lg mb-4" style="color: var(--text-primary)">Backend</h3>
+          <div class="flex flex-wrap gap-2 justify-center">
+            <span class="px-3 py-1.5 rounded-lg text-sm font-medium" style="background: var(--bg-tertiary); color: var(--text-secondary)">Firebase</span>
+          </div>
+        </div>
+
+        <!-- Tools -->
+        <div class="skill-card card-hover reveal" data-reveal="up" data-delay="400">
+          <div class="skill-icon"><i class="fas fa-tools"></i></div>
+          <h3 class="font-bold text-lg mb-4" style="color: var(--text-primary)">Tools</h3>
+          <div class="flex flex-wrap gap-2 justify-center">
+            <span class="px-3 py-1.5 rounded-lg text-sm font-medium" style="background: var(--bg-tertiary); color: var(--text-secondary)">GitHub</span>
+            <span class="px-3 py-1.5 rounded-lg text-sm font-medium" style="background: var(--bg-tertiary); color: var(--text-secondary)">VS Code</span>
+            <span class="px-3 py-1.5 rounded-lg text-sm font-medium" style="background: var(--bg-tertiary); color: var(--text-secondary)">Netlify</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== -->
+  <!-- FEATURED PROJECTS SECTION -->
+  <!-- ======================== -->
+  <section id="projects" class="section-padding" style="background: var(--bg-secondary)">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <!-- Section Title -->
+      <h2 class="text-3xl sm:text-4xl font-bold text-center mb-4 reveal" data-reveal="up">
+        <span class="gradient-text">Featured Projects</span>
+      </h2>
+      <p class="text-center mb-12 max-w-2xl mx-auto reveal" data-reveal="up" data-delay="100" style="color: var(--text-secondary)">
+        What I've built
+      </p>
+
+      <!-- Projects Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+
+        <!-- Project 1 — SmartAttend -->
+        <div class="project-card card-hover reveal" data-reveal="up" data-delay="100" data-category="web">
+          <div class="placeholder-img rounded-t-lg">
+            <i class="fas fa-image"></i>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold mb-2" style="color: var(--text-primary)">SmartAttend</h3>
+            <p class="text-sm mb-4" style="color: var(--text-secondary)">
+              AI-powered smart attendance tracking system using facial recognition and real-time monitoring.
+            </p>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="px-2 py-1 rounded text-xs font-medium" style="background: var(--bg-tertiary); color: var(--text-secondary)">HTML</span>
+              <span class="px-2 py-1 rounded text-xs font-medium" style="background: var(--bg-tertiary); color: var(--text-secondary)">CSS</span>
+              <span class="px-2 py-1 rounded text-xs font-medium" style="background: var(--bg-tertiary); color: var(--text-secondary)">JavaScript</span>
+            </div>
+            <div class="flex flex-wrap gap-3">
+              <a href="https://minegameing50.github.io/SmartAttend/" target="_blank" class="text-sm font-semibold" style="color: var(--primary)">
+                <i class="fas fa-external-link-alt mr-1"></i>Live Demo
+              </a>
+              <a href="https://github.com/minegameing50/SmartAttend" target="_blank" class="text-sm font-semibold" style="color: var(--text-secondary)">
+                <i class="fab fa-github mr-1"></i>GitHub
+              </a>
+              <a href="pages/smartattend.html" class="text-sm font-semibold" style="color: var(--text-secondary)">
+                <i class="fas fa-book-open mr-1"></i>Case Study
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2 — BiasGuard AI -->
+        <div class="project-card card-hover reveal" data-reveal="up" data-delay="200" data-category="ai">
+          <div class="placeholder-img rounded-t-lg">
+            <i class="fas fa-image"></i>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold mb-2" style="color: var(--text-primary)">BiasGuard AI</h3>
+            <p class="text-sm mb-4" style="color: var(--text-secondary)">
+              AI tool to detect and mitigate bias in machine learning models. Built for Google Solution Challenge 2026.
+            </p>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="px-2 py-1 rounded text-xs font-medium" style="background: var(--bg-tertiary); color: var(--text-secondary)">Python</span>
+              <span class="px-2 py-1 rounded text-xs font-medium" style="background: var(--bg-tertiary); color: var(--text-secondary)">AI/ML</span>
+              <span class="px-2 py-1 rounded text-xs font-medium" style="background: var(--bg-tertiary); color: var(--text-secondary)">Flask</span>
+            </div>
+            <div class="flex flex-wrap gap-3">
+              <a href="https://biasguard-ai.onrender.com/" target="_blank" class="text-sm font-semibold" style="color: var(--primary)">
+                <i class="fas fa-external-link-alt mr-1"></i>Live Demo
+              </a>
+              <a href="https://github.com/minegameing50/BiasGuard-AI" target="_blank" class="text-sm font-semibold" style="color: var(--text-secondary)">
+                <i class="fab fa-github mr-1"></i>GitHub
+              </a>
+              <a href="pages/biasguard.html" class="text-sm font-semibold" style="color: var(--text-secondary)">
+                <i class="fas fa-book-open mr-1"></i>Case Study
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3 — PulseChat -->
+        <div class="project-card card-hover reveal" data-reveal="up" data-delay="300" data-category="web">
+          <div class="placeholder-img rounded-t-lg">
+            <i class="fas fa-image"></i>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold mb-2" style="color: var(--text-primary)">PulseChat</h3>
+            <p class="text-sm mb-4" style="color: var(--text-secondary)">
+              Real-time chat application with modern UI, instant messaging, and seamless user experience.
+            </p>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="px-2 py-1 rounded text-xs font-medium" style="background: var(--bg-tertiary); color: var(--text-secondary)">HTML</span>
+              <span class="px-2 py-1 rounded text-xs font-medium" style="background: var(--bg-tertiary); color: var(--text-secondary)">CSS</span>
+              <span class="px-2 py-1 rounded text-xs font-medium" style="background: var(--bg-tertiary); color: var(--text-secondary)">JavaScript</span>
+              <span class="px-2 py-1 rounded text-xs font-medium" style="background: var(--bg-tertiary); color: var(--text-secondary)">Firebase</span>
+            </div>
+            <div class="flex flex-wrap gap-3">
+              <a href="https://minegameing50.github.io/pulsechat/" target="_blank" class="text-sm font-semibold" style="color: var(--primary)">
+                <i class="fas fa-external-link-alt mr-1"></i>Live Demo
+              </a>
+              <a href="https://github.com/minegameing50/pulsechat" target="_blank" class="text-sm font-semibold" style="color: var(--text-secondary)">
+                <i class="fab fa-github mr-1"></i>GitHub
+              </a>
+              <a href="pages/pulsechat.html" class="text-sm font-semibold" style="color: var(--text-secondary)">
+                <i class="fas fa-book-open mr-1"></i>Case Study
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 4 — GestureClip -->
+        <div class="project-card card-hover reveal" data-reveal="up" data-delay="400" data-category="ai">
+          <div class="placeholder-img rounded-t-lg">
+            <i class="fas fa-image"></i>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold mb-2" style="color: var(--text-primary)">GestureClip</h3>
+            <p class="text-sm mb-4" style="color: var(--text-secondary)">
+              Gesture-based clipboard manager for intuitive copy-paste operations using hand tracking.
+            </p>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="px-2 py-1 rounded text-xs font-medium" style="background: var(--bg-tertiary); color: var(--text-secondary)">Python</span>
+              <span class="px-2 py-1 rounded text-xs font-medium" style="background: var(--bg-tertiary); color: var(--text-secondary)">OpenCV</span>
+              <span class="px-2 py-1 rounded text-xs font-medium" style="background: var(--bg-tertiary); color: var(--text-secondary)">MediaPipe</span>
+            </div>
+            <div class="flex flex-wrap gap-3">
+              <a href="https://minegameing50.github.io/GestureClip/" target="_blank" class="text-sm font-semibold" style="color: var(--primary)">
+                <i class="fas fa-external-link-alt mr-1"></i>Live Demo
+              </a>
+              <a href="https://github.com/minegameing50/GestureClip" target="_blank" class="text-sm font-semibold" style="color: var(--text-secondary)">
+                <i class="fab fa-github mr-1"></i>GitHub
+              </a>
+              <a href="pages/gestureclip.html" class="text-sm font-semibold" style="color: var(--text-secondary)">
+                <i class="fas fa-book-open mr-1"></i>Case Study
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- View All Projects -->
+      <div class="text-center mt-10 reveal" data-reveal="up">
+        <a href="projects.html" class="gradient-btn">
+          <i class="fas fa-th-large mr-2"></i>View All Projects
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== -->
+  <!-- GITHUB JOURNEY SECTION -->
+  <!-- ======================== -->
+  <section id="github-journey" class="section-padding">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <!-- Section Title -->
+      <h2 class="text-3xl sm:text-4xl font-bold text-center mb-4 reveal" data-reveal="up">
+        <span class="gradient-text">GitHub Journey</span>
+      </h2>
+      <p class="text-center mb-12 max-w-2xl mx-auto reveal" data-reveal="up" data-delay="100" style="color: var(--text-secondary)">
+        My development timeline
+      </p>
+
+      <!-- Timeline -->
+      <div class="timeline max-w-3xl mx-auto">
+        <!-- Item 1 -->
+        <div class="timeline-item reveal" data-reveal="left" data-delay="100">
+          <div class="timeline-date">2025</div>
+          <div class="card-hover" style="margin-top: 0.5rem">
+            <h3 class="text-lg font-bold" style="color: var(--text-primary)">Started BCA</h3>
+            <p class="text-sm" style="color: var(--text-secondary)">Began my journey in computer science at Mandsaur University</p>
+          </div>
+        </div>
+        <!-- Item 2 -->
+        <div class="timeline-item reveal" data-reveal="left" data-delay="200">
+          <div class="timeline-date">2025</div>
+          <div class="card-hover" style="margin-top: 0.5rem">
+            <h3 class="text-lg font-bold" style="color: var(--text-primary)">Built PulseChat</h3>
+            <p class="text-sm" style="color: var(--text-secondary)">Real-time chat application with Firebase backend</p>
+          </div>
+        </div>
+        <!-- Item 3 -->
+        <div class="timeline-item reveal" data-reveal="left" data-delay="300">
+          <div class="timeline-date">2026</div>
+          <div class="card-hover" style="margin-top: 0.5rem">
+            <h3 class="text-lg font-bold" style="color: var(--text-primary)">Built SmartAttend</h3>
+            <p class="text-sm" style="color: var(--text-secondary)">AI-powered attendance system with facial recognition</p>
+          </div>
+        </div>
+        <!-- Item 4 -->
+        <div class="timeline-item reveal" data-reveal="left" data-delay="400">
+          <div class="timeline-date">2026</div>
+          <div class="card-hover" style="margin-top: 0.5rem">
+            <h3 class="text-lg font-bold" style="color: var(--text-primary)">Built BiasGuard AI</h3>
+            <p class="text-sm" style="color: var(--text-secondary)">ML bias detection tool for Google Solution Challenge</p>
+          </div>
+        </div>
+        <!-- Item 5 -->
+        <div class="timeline-item reveal" data-reveal="left" data-delay="500">
+          <div class="timeline-date">2026</div>
+          <div class="card-hover" style="margin-top: 0.5rem">
+            <h3 class="text-lg font-bold" style="color: var(--text-primary)">Internshala Student Partner</h3>
+            <p class="text-sm" style="color: var(--text-secondary)">Started professional campus engagement role</p>
+          </div>
+        </div>
+        <!-- Item 6 -->
+        <div class="timeline-item reveal" data-reveal="left" data-delay="600">
+          <div class="timeline-date">2026</div>
+          <div class="card-hover" style="margin-top: 0.5rem">
+            <h3 class="text-lg font-bold" style="color: var(--text-primary)">Google Solution Challenge</h3>
+            <p class="text-sm" style="color: var(--text-secondary)">Achieved Top 106 Teams globally with BiasGuard AI</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Stats Row -->
+      <div class="flex flex-wrap justify-center gap-8 mt-12 reveal" data-reveal="up">
+        <div class="text-center">
+          <div class="text-3xl font-bold gradient-text counter" data-target="4">0</div>
+          <p class="text-sm" style="color: var(--text-secondary)">Projects Built</p>
+        </div>
+        <div class="text-center">
+          <div class="text-3xl font-bold gradient-text counter" data-target="10">0</div>
+          <p class="text-sm" style="color: var(--text-secondary)">Technologies Used</p>
+        </div>
+        <div class="text-center">
+          <div class="text-3xl font-bold gradient-text counter" data-target="106">0</div>
+          <p class="text-sm" style="color: var(--text-secondary)">Top Teams (GSC)</p>
+        </div>
+      </div>
+
+      <!-- Visit GitHub -->
+      <div class="text-center mt-8 reveal" data-reveal="up">
+        <a href="https://github.com/minegameing50" target="_blank" class="gradient-btn">
+          <i class="fab fa-github mr-2"></i>Visit GitHub
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== -->
+  <!-- ACHIEVEMENTS SECTION -->
+  <!-- ======================== -->
+  <section id="achievements" class="section-padding" style="background: var(--bg-secondary)">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <!-- Section Title -->
+      <h2 class="text-3xl sm:text-4xl font-bold text-center mb-4 reveal" data-reveal="up">
+        <span class="gradient-text">Achievements</span>
+      </h2>
+      <p class="text-center mb-12 max-w-2xl mx-auto reveal" data-reveal="up" data-delay="100" style="color: var(--text-secondary)">
+        Milestones &amp; recognition
+      </p>
+
+      <!-- Achievements Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+        <!-- 1 -->
+        <div class="card-hover text-center reveal" data-reveal="up" data-delay="100">
+          <div class="skill-icon mx-auto mb-4"><i class="fas fa-handshake"></i></div>
+          <h3 class="font-bold text-lg mb-2" style="color: var(--text-primary)">Internshala Student Partner</h3>
+          <p class="text-sm" style="color: var(--text-secondary)">Selected as campus ambassador for Internshala</p>
+        </div>
+        <!-- 2 -->
+        <div class="card-hover text-center reveal" data-reveal="up" data-delay="200">
+          <div class="skill-icon mx-auto mb-4"><i class="fab fa-google"></i></div>
+          <h3 class="font-bold text-lg mb-2" style="color: var(--text-primary)">Google Solution Challenge</h3>
+          <p class="text-sm" style="color: var(--text-secondary)">Participated in Google's global hackathon 2026</p>
+        </div>
+        <!-- 3 -->
+        <div class="card-hover text-center reveal" data-reveal="up" data-delay="300">
+          <div class="skill-icon mx-auto mb-4"><i class="fas fa-trophy"></i></div>
+          <h3 class="font-bold text-lg mb-2" style="color: var(--text-primary)">Top 106 Teams</h3>
+          <p class="text-sm" style="color: var(--text-secondary)">Ranked among top 106 teams globally in GSC 2026</p>
+        </div>
+        <!-- 4 -->
+        <div class="card-hover text-center reveal" data-reveal="up" data-delay="400">
+          <div class="skill-icon mx-auto mb-4"><i class="fas fa-rocket"></i></div>
+          <h3 class="font-bold text-lg mb-2" style="color: var(--text-primary)">Multiple Live Projects</h3>
+          <p class="text-sm" style="color: var(--text-secondary)">4+ production-ready projects deployed and live</p>
+        </div>
+        <!-- 5 -->
+        <div class="card-hover text-center reveal" data-reveal="up" data-delay="500">
+          <div class="skill-icon mx-auto mb-4"><i class="fab fa-github"></i></div>
+          <h3 class="font-bold text-lg mb-2" style="color: var(--text-primary)">Open Source Builder</h3>
+          <p class="text-sm" style="color: var(--text-secondary)">Active contributor building in public on GitHub</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== -->
+  <!-- CERTIFICATES SECTION -->
+  <!-- ======================== -->
+  <section id="certificates" class="section-padding">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <!-- Section Title -->
+      <h2 class="text-3xl sm:text-4xl font-bold text-center mb-4 reveal" data-reveal="up">
+        <span class="gradient-text">Certificates</span>
+      </h2>
+      <p class="text-center mb-12 max-w-2xl mx-auto reveal" data-reveal="up" data-delay="100" style="color: var(--text-secondary)">
+        Learning &amp; development
+      </p>
+
+      <!-- Certificate Cards -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-4xl mx-auto">
+        <!-- Cert 1 -->
+        <div class="certificate-card card-hover reveal" data-reveal="up" data-delay="100">
+          <div class="placeholder-img" style="min-height: 160px; border-radius: var(--radius) var(--radius) 0 0;">
+            <i class="fas fa-certificate"></i>
+          </div>
+          <div class="p-4">
+            <h3 class="font-bold mb-1" style="color: var(--text-primary)">Internshala Training Certificate</h3>
+            <p class="text-sm mb-1" style="color: var(--text-secondary)">Internshala</p>
+            <p class="text-xs mb-3" style="color: var(--text-tertiary)">2026</p>
+            <button class="text-sm font-medium" style="color: var(--primary)" onclick="alert('Certificate will be available soon!')">
+              <i class="fas fa-external-link-alt mr-1"></i>View Certificate
+            </button>
+          </div>
+        </div>
+        <!-- Cert 2 -->
+        <div class="certificate-card card-hover reveal" data-reveal="up" data-delay="200">
+          <div class="placeholder-img" style="min-height: 160px; border-radius: var(--radius) var(--radius) 0 0;">
+            <i class="fas fa-certificate"></i>
+          </div>
+          <div class="p-4">
+            <h3 class="font-bold mb-1" style="color: var(--text-primary)">Programming Fundamentals</h3>
+            <p class="text-sm mb-1" style="color: var(--text-secondary)">GUVI</p>
+            <p class="text-xs mb-3" style="color: var(--text-tertiary)">2025</p>
+            <button class="text-sm font-medium" style="color: var(--primary)" onclick="alert('Certificate will be available soon!')">
+              <i class="fas fa-external-link-alt mr-1"></i>View Certificate
+            </button>
+          </div>
+        </div>
+        <!-- Cert 3 -->
+        <div class="certificate-card card-hover reveal" data-reveal="up" data-delay="300">
+          <div class="placeholder-img" style="min-height: 160px; border-radius: var(--radius) var(--radius) 0 0;">
+            <i class="fas fa-certificate"></i>
+          </div>
+          <div class="p-4">
+            <h3 class="font-bold mb-1" style="color: var(--text-primary)">Web Development Workshop</h3>
+            <p class="text-sm mb-1" style="color: var(--text-secondary)">Workshop</p>
+            <p class="text-xs mb-3" style="color: var(--text-tertiary)">2025</p>
+            <button class="text-sm font-medium" style="color: var(--primary)" onclick="alert('Certificate will be available soon!')">
+              <i class="fas fa-external-link-alt mr-1"></i>View Certificate
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== -->
+  <!-- CONTACT SECTION -->
+  <!-- ======================== -->
+  <section id="contact" class="section-padding" style="background: var(--bg-secondary)">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <!-- Section Title -->
+      <h2 class="text-3xl sm:text-4xl font-bold text-center mb-4 reveal" data-reveal="up">
+        <span class="gradient-text">Get In Touch</span>
+      </h2>
+      <p class="text-center mb-12 max-w-2xl mx-auto reveal" data-reveal="up" data-delay="100" style="color: var(--text-secondary)">
+        Let's work together
+      </p>
+
+      <!-- Contact Grid -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-5xl mx-auto">
+
+        <!-- Left — Contact Info -->
+        <div class="space-y-6 reveal" data-reveal="left">
+          <p class="text-lg" style="color: var(--text-secondary)">
+            I'm always open to discussing new projects, opportunities, and collaborations. Feel free to reach out!
+          </p>
+
+          <!-- Contact Cards -->
+          <div class="flex items-center gap-4 card-hover">
+            <div class="skill-icon"><i class="fas fa-envelope"></i></div>
+            <div>
+              <h4 class="font-semibold" style="color: var(--text-primary)">Email</h4>
+              <a href="mailto:atuldhanotiya7@gmail.com" class="text-sm" style="color: var(--text-secondary)">atuldhanotiya7@gmail.com</a>
+            </div>
+          </div>
+
+          <div class="flex items-center gap-4 card-hover">
+            <div class="skill-icon"><i class="fas fa-phone"></i></div>
+            <div>
+              <h4 class="font-semibold" style="color: var(--text-primary)">Phone</h4>
+              <a href="tel:+919669812090" class="text-sm" style="color: var(--text-secondary)">+91 9669812090</a>
+            </div>
+          </div>
+
+          <div class="flex items-center gap-4 card-hover">
+            <div class="skill-icon"><i class="fas fa-map-marker-alt"></i></div>
+            <div>
+              <h4 class="font-semibold" style="color: var(--text-primary)">Location</h4>
+              <p class="text-sm" style="color: var(--text-secondary)">Suwasra, Madhya Pradesh</p>
+            </div>
+          </div>
+
+          <!-- Social Buttons -->
+          <div class="flex gap-3 mt-6">
+            <a href="https://github.com/minegameing50" target="_blank" class="social-link w-11 h-11 rounded-full flex items-center justify-center" title="GitHub" style="border: 1px solid var(--border-color); color: var(--text-secondary)">
+              <i class="fab fa-github text-xl"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/atul-dhanotiya-648481356" target="_blank" class="social-link w-11 h-11 rounded-full flex items-center justify-center" title="LinkedIn" style="border: 1px solid var(--border-color); color: var(--text-secondary)">
+              <i class="fab fa-linkedin text-xl"></i>
+            </a>
+            <a href="https://www.instagram.com/atul_dhanotiya_4422" target="_blank" class="social-link w-11 h-11 rounded-full flex items-center justify-center" title="Instagram" style="border: 1px solid var(--border-color); color: var(--text-secondary)">
+              <i class="fab fa-instagram text-xl"></i>
+            </a>
+            <a href="mailto:atuldhanotiya7@gmail.com" class="social-link w-11 h-11 rounded-full flex items-center justify-center" title="Email" style="border: 1px solid var(--border-color); color: var(--text-secondary)">
+              <i class="fas fa-envelope text-xl"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Right — Contact Form -->
+        <form id="contact-form" class="contact-form space-y-4 reveal" data-reveal="right">
+          <div>
+            <label class="block text-sm font-medium mb-1" style="color: var(--text-primary)">Name</label>
+            <input type="text" placeholder="Your Name" required>
+          </div>
+          <div>
+            <label class="block text-sm font-medium mb-1" style="color: var(--text-primary)">Email</label>
+            <input type="email" placeholder="your@email.com" required>
+          </div>
+          <div>
+            <label class="block text-sm font-medium mb-1" style="color: var(--text-primary)">Message</label>
+            <textarea placeholder="Your message..." required></textarea>
+          </div>
+          <button type="submit" class="gradient-btn btn-glow w-full">
+            <i class="fas fa-paper-plane mr-2"></i>Send Message
+          </button>
+          <div id="form-success" class="hidden text-center p-3 rounded-lg" style="background: rgba(34, 197, 94, 0.1); color: #16a34a;">
+            <i class="fas fa-check-circle mr-2"></i>Thank you! Message sent successfully.
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== -->
+  <!-- FOOTER -->
+  <!-- ======================== -->
+  <footer class="py-12" style="background: var(--bg-tertiary); border-top: 1px solid var(--border-color)">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <!-- Footer Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+
+        <!-- Col 1 — Brand -->
+        <div>
+          <img src="assets/logo.png" alt="AD" class="h-8 w-auto mb-3">
+          <p class="text-sm" style="color: var(--text-secondary)">Building modern web applications and AI-powered solutions.</p>
+        </div>
+
+        <!-- Col 2 — Quick Links -->
+        <div>
+          <h4 class="font-semibold mb-3" style="color: var(--text-primary)">Quick Links</h4>
+          <ul class="space-y-2">
+            <li><a href="#home" class="text-sm transition hover:underline" style="color: var(--text-secondary)">Home</a></li>
+            <li><a href="#about" class="text-sm transition hover:underline" style="color: var(--text-secondary)">About</a></li>
+            <li><a href="#projects" class="text-sm transition hover:underline" style="color: var(--text-secondary)">Projects</a></li>
+            <li><a href="#contact" class="text-sm transition hover:underline" style="color: var(--text-secondary)">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3 — Connect -->
+        <div>
+          <h4 class="font-semibold mb-3" style="color: var(--text-primary)">Connect</h4>
+          <ul class="space-y-2">
+            <li>
+              <a href="https://github.com/minegameing50" target="_blank" class="text-sm transition hover:underline" style="color: var(--text-secondary)">
+                <i class="fab fa-github mr-2"></i>GitHub
+              </a>
+            </li>
+            <li>
+              <a href="https://www.linkedin.com/in/atul-dhanotiya-648481356" target="_blank" class="text-sm transition hover:underline" style="color: var(--text-secondary)">
+                <i class="fab fa-linkedin mr-2"></i>LinkedIn
+              </a>
+            </li>
+            <li>
+              <a href="https://www.instagram.com/atul_dhanotiya_4422" target="_blank" class="text-sm transition hover:underline" style="color: var(--text-secondary)">
+                <i class="fab fa-instagram mr-2"></i>Instagram
+              </a>
+            </li>
+            <li>
+              <a href="mailto:atuldhanotiya7@gmail.com" class="text-sm transition hover:underline" style="color: var(--text-secondary)">
+                <i class="fas fa-envelope mr-2"></i>Email
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Divider -->
+      <hr style="border-color: var(--border-color)" class="my-6">
+
+      <!-- Bottom Row -->
+      <div class="flex flex-col sm:flex-row justify-between items-center gap-2">
+        <p class="text-sm" style="color: var(--text-tertiary)">© 2026 Atul Dhanotiya. All rights reserved.</p>
+        <p class="text-sm" style="color: var(--text-tertiary)">Built with ❤️ using HTML, CSS &amp; JavaScript</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- BACK TO TOP BUTTON -->
+  <button id="back-to-top" class="back-to-top" aria-label="Back to top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <!-- Scripts -->
+  <script src="js/darkmode.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/projects.js"></script>
+</body>
+</html>

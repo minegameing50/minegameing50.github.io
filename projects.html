@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects | Atul Dhanotiya</title>
+    <meta name="description" content="Explore the portfolio projects of Atul Dhanotiya.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: { inter: ['Inter', 'sans-serif'] }
+        }
+      }
+    }
+    </script>
+    
+    <!-- Fonts & Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/darkmode.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/logo.png">
+</head>
+<body class="antialiased">
+
+    <!-- Scroll Progress Bar -->
+    <div id="scroll-progress" class="scroll-progress"></div>
+
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="loading-screen">
+        <img src="assets/logo.png" alt="AD Logo" class="loading-logo" width="80">
+        <h2 class="font-semibold text-lg mt-4" style="color: var(--text-primary)">Atul Dhanotiya</h2>
+        <p class="text-sm mt-2" style="color: var(--text-secondary)">Loading Projects...</p>
+        <div class="loading-bar-container">
+            <div class="loading-bar"></div>
+        </div>
+    </div>
+
+    <!-- Navbar -->
+    <nav id="navbar" class="nav-glass">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex justify-between items-center">
+            <!-- Logo -->
+            <a href="index.html#home"><img src="assets/logo.png" alt="AD" class="h-8 w-auto"></a>
+            
+            <!-- Desktop Nav -->
+            <div class="desktop-nav hidden md:flex gap-1 items-center">
+                <a class="nav-link px-3 py-2 rounded-lg text-sm font-medium transition hover:bg-blue-50 dark:hover:bg-slate-800" style="color: var(--text-secondary)" href="index.html#home">Home</a>
+                <a class="nav-link px-3 py-2 rounded-lg text-sm font-medium transition hover:bg-blue-50 dark:hover:bg-slate-800" style="color: var(--text-secondary)" href="index.html#about">About</a>
+                <a class="nav-link px-3 py-2 rounded-lg text-sm font-medium transition hover:bg-blue-50 dark:hover:bg-slate-800" style="color: var(--text-secondary)" href="index.html#experience">Experience</a>
+                <a class="nav-link px-3 py-2 rounded-lg text-sm font-medium transition hover:bg-blue-50 dark:hover:bg-slate-800" style="color: var(--text-secondary)" href="index.html#skills">Skills</a>
+                <a class="nav-link px-3 py-2 rounded-lg text-sm font-medium transition active" style="color: var(--primary); background: rgba(var(--primary-rgb), 0.1);" href="projects.html">Projects</a>
+                <a class="nav-link px-3 py-2 rounded-lg text-sm font-medium transition hover:bg-blue-50 dark:hover:bg-slate-800" style="color: var(--text-secondary)" href="index.html#achievements">Achievements</a>
+                <a class="nav-link px-3 py-2 rounded-lg text-sm font-medium transition hover:bg-blue-50 dark:hover:bg-slate-800" style="color: var(--text-secondary)" href="index.html#contact">Contact</a>
+            </div>
+            
+            <!-- Right Actions -->
+            <div class="flex items-center gap-3">
+                <button id="theme-toggle" class="p-2 rounded-lg" title="Toggle theme" style="color: var(--text-primary)">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <a href="#" onclick="alert('Resume will be available soon!'); return false;" class="gradient-btn text-sm py-2 px-4 hidden sm:inline-flex items-center">
+                    Resume <i class="fas fa-download ml-1"></i>
+                </a>
+                <!-- Hamburger -->
+                <button class="hamburger md:hidden" aria-label="Menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="mobile-menu">
+        <a href="index.html#home" class="text-xl font-medium" style="color: var(--text-primary)">Home</a>
+        <a href="index.html#about" class="text-xl font-medium" style="color: var(--text-primary)">About</a>
+        <a href="index.html#experience" class="text-xl font-medium" style="color: var(--text-primary)">Experience</a>
+        <a href="index.html#skills" class="text-xl font-medium" style="color: var(--text-primary)">Skills</a>
+        <a href="projects.html" class="text-xl font-medium" style="color: var(--primary)">Projects</a>
+        <a href="index.html#achievements" class="text-xl font-medium" style="color: var(--text-primary)">Achievements</a>
+        <a href="index.html#contact" class="text-xl font-medium" style="color: var(--text-primary)">Contact</a>
+        <a href="#" onclick="alert('Resume will be available soon!'); return false;" class="gradient-btn mt-4">Resume</a>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-16 px-4" style="background: var(--bg-secondary)">
+        <div class="max-w-4xl mx-auto text-center reveal" data-reveal="up">
+            <h1 class="text-4xl sm:text-5xl font-extrabold mb-4"><span class="gradient-text">My Projects</span></h1>
+            <p class="text-lg" style="color: var(--text-secondary)">Explore my work, side projects, and open source contributions.</p>
+        </div>
+    </section>
+
+    <!-- Projects Grid Section -->
+    <section class="pb-24 px-4 section-padding">
+        <div class="max-w-7xl mx-auto">
+            
+            <!-- Filters -->
+            <div class="flex flex-wrap justify-center gap-3 mb-12 reveal" data-reveal="up">
+                <button class="filter-btn active px-4 py-2 rounded-full text-sm font-medium transition" data-filter="all" style="background: var(--primary); color: white;">All</button>
+                <button class="filter-btn px-4 py-2 rounded-full text-sm font-medium transition" data-filter="web" style="background: var(--bg-tertiary); color: var(--text-secondary);">Web</button>
+                <button class="filter-btn px-4 py-2 rounded-full text-sm font-medium transition" data-filter="ai" style="background: var(--bg-tertiary); color: var(--text-secondary);">AI/ML</button>
+            </div>
+
+            <!-- Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8" id="projects-grid">
+                
+                <!-- Project 1: SmartAttend -->
+                <div class="project-card card-hover reveal" data-reveal="up" data-delay="100" data-category="web">
+                    <div class="placeholder-img rounded-t-lg">
+                        <i class="fas fa-id-badge"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2" style="color: var(--text-primary)">SmartAttend</h3>
+                        <p class="text-base mb-4" style="color: var(--text-secondary)">AI-powered smart attendance tracking system using facial recognition and real-time monitoring.</p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="px-3 py-1 text-xs font-medium rounded-md" style="background: var(--bg-tertiary); color: var(--text-secondary)">HTML</span>
+                            <span class="px-3 py-1 text-xs font-medium rounded-md" style="background: var(--bg-tertiary); color: var(--text-secondary)">CSS</span>
+                            <span class="px-3 py-1 text-xs font-medium rounded-md" style="background: var(--bg-tertiary); color: var(--text-secondary)">JavaScript</span>
+                        </div>
+                        <div class="flex flex-wrap gap-4">
+                            <a href="https://minegameing50.github.io/SmartAttend/" target="_blank" class="text-sm font-semibold hover:underline" style="color: var(--primary)"><i class="fas fa-external-link-alt mr-1"></i>Live Demo</a>
+                            <a href="https://github.com/minegameing50/SmartAttend" target="_blank" class="text-sm font-semibold hover:underline" style="color: var(--text-secondary)"><i class="fab fa-github mr-1"></i>GitHub</a>
+                            <a href="pages/smartattend.html" class="text-sm font-semibold hover:underline" style="color: var(--text-secondary)"><i class="fas fa-book-open mr-1"></i>Case Study</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2: BiasGuard AI -->
+                <div class="project-card card-hover reveal" data-reveal="up" data-delay="200" data-category="ai">
+                    <div class="placeholder-img rounded-t-lg">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-2xl font-bold" style="color: var(--text-primary)">BiasGuard AI</h3>
+                            <span class="text-xs font-bold px-2 py-1 rounded" style="background: rgba(var(--primary-rgb), 0.1); color: var(--primary)">GSC 2026</span>
+                        </div>
+                        <p class="text-base mb-4" style="color: var(--text-secondary)">AI tool to detect and mitigate bias in ML models. Built for Google Solution Challenge 2026. Top 106 teams globally.</p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="px-3 py-1 text-xs font-medium rounded-md" style="background: var(--bg-tertiary); color: var(--text-secondary)">Python</span>
+                            <span class="px-3 py-1 text-xs font-medium rounded-md" style="background: var(--bg-tertiary); color: var(--text-secondary)">AI/ML</span>
+                            <span class="px-3 py-1 text-xs font-medium rounded-md" style="background: var(--bg-tertiary); color: var(--text-secondary)">Flask</span>
+                        </div>
+                        <div class="flex flex-wrap gap-4">
+                            <a href="https://biasguard-ai.onrender.com/" target="_blank" class="text-sm font-semibold hover:underline" style="color: var(--primary)"><i class="fas fa-external-link-alt mr-1"></i>Live Demo</a>
+                            <a href="https://github.com/minegameing50/BiasGuard-AI" target="_blank" class="text-sm font-semibold hover:underline" style="color: var(--text-secondary)"><i class="fab fa-github mr-1"></i>GitHub</a>
+                            <a href="pages/biasguard.html" class="text-sm font-semibold hover:underline" style="color: var(--text-secondary)"><i class="fas fa-book-open mr-1"></i>Case Study</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3: PulseChat -->
+                <div class="project-card card-hover reveal" data-reveal="up" data-delay="300" data-category="web">
+                    <div class="placeholder-img rounded-t-lg">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2" style="color: var(--text-primary)">PulseChat</h3>
+                        <p class="text-base mb-4" style="color: var(--text-secondary)">Real-time chat application with modern UI, instant messaging, and seamless user experience.</p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="px-3 py-1 text-xs font-medium rounded-md" style="background: var(--bg-tertiary); color: var(--text-secondary)">HTML</span>
+                            <span class="px-3 py-1 text-xs font-medium rounded-md" style="background: var(--bg-tertiary); color: var(--text-secondary)">CSS</span>
+                            <span class="px-3 py-1 text-xs font-medium rounded-md" style="background: var(--bg-tertiary); color: var(--text-secondary)">JavaScript</span>
+                            <span class="px-3 py-1 text-xs font-medium rounded-md" style="background: var(--bg-tertiary); color: var(--text-secondary)">Firebase</span>
+                        </div>
+                        <div class="flex flex-wrap gap-4">
+                            <a href="https://minegameing50.github.io/pulsechat/" target="_blank" class="text-sm font-semibold hover:underline" style="color: var(--primary)"><i class="fas fa-external-link-alt mr-1"></i>Live Demo</a>
+                            <a href="https://github.com/minegameing50/pulsechat" target="_blank" class="text-sm font-semibold hover:underline" style="color: var(--text-secondary)"><i class="fab fa-github mr-1"></i>GitHub</a>
+                            <a href="pages/pulsechat.html" class="text-sm font-semibold hover:underline" style="color: var(--text-secondary)"><i class="fas fa-book-open mr-1"></i>Case Study</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4: GestureClip -->
+                <div class="project-card card-hover reveal" data-reveal="up" data-delay="400" data-category="ai">
+                    <div class="placeholder-img rounded-t-lg">
+                        <i class="fas fa-hand-paper"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2" style="color: var(--text-primary)">GestureClip</h3>
+                        <p class="text-base mb-4" style="color: var(--text-secondary)">Gesture-based clipboard manager using hand tracking for intuitive copy-paste operations.</p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="px-3 py-1 text-xs font-medium rounded-md" style="background: var(--bg-tertiary); color: var(--text-secondary)">Python</span>
+                            <span class="px-3 py-1 text-xs font-medium rounded-md" style="background: var(--bg-tertiary); color: var(--text-secondary)">OpenCV</span>
+                            <span class="px-3 py-1 text-xs font-medium rounded-md" style="background: var(--bg-tertiary); color: var(--text-secondary)">MediaPipe</span>
+                        </div>
+                        <div class="flex flex-wrap gap-4">
+                            <a href="https://minegameing50.github.io/GestureClip/" target="_blank" class="text-sm font-semibold hover:underline" style="color: var(--primary)"><i class="fas fa-external-link-alt mr-1"></i>Live Demo</a>
+                            <a href="https://github.com/minegameing50/GestureClip" target="_blank" class="text-sm font-semibold hover:underline" style="color: var(--text-secondary)"><i class="fab fa-github mr-1"></i>GitHub</a>
+                            <a href="pages/gestureclip.html" class="text-sm font-semibold hover:underline" style="color: var(--text-secondary)"><i class="fas fa-book-open mr-1"></i>Case Study</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 mt-12" style="background: var(--bg-tertiary); border-top: 1px solid var(--border-color)">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8 text-center md:text-left">
+                <!-- Brand -->
+                <div>
+                    <img src="assets/logo.png" alt="AD Logo" class="h-8 w-auto mx-auto md:mx-0 mb-4">
+                    <p class="text-sm" style="color: var(--text-secondary)">Building modern web applications and AI-powered solutions.</p>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="font-bold mb-4" style="color: var(--text-primary)">Quick Links</h4>
+                    <ul class="space-y-2 text-sm" style="color: var(--text-secondary)">
+                        <li><a href="index.html#home" class="hover:underline">Home</a></li>
+                        <li><a href="index.html#about" class="hover:underline">About</a></li>
+                        <li><a href="projects.html" class="hover:underline">Projects</a></li>
+                        <li><a href="index.html#contact" class="hover:underline">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Connect -->
+                <div>
+                    <h4 class="font-bold mb-4" style="color: var(--text-primary)">Connect</h4>
+                    <div class="flex justify-center md:justify-start gap-4">
+                        <a href="https://github.com/minegameing50" target="_blank" class="text-xl transition hover:-translate-y-1" style="color: var(--text-secondary)"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/atul-dhanotiya-648481356" target="_blank" class="text-xl transition hover:-translate-y-1" style="color: var(--text-secondary)"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://www.instagram.com/atul_dhanotiya_4422" target="_blank" class="text-xl transition hover:-translate-y-1" style="color: var(--text-secondary)"><i class="fab fa-instagram"></i></a>
+                        <a href="mailto:atuldhanotiya7@gmail.com" class="text-xl transition hover:-translate-y-1" style="color: var(--text-secondary)"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <hr class="border-t my-6" style="border-color: var(--border-color)">
+            
+            <div class="flex flex-col md:flex-row justify-between items-center gap-4 text-sm" style="color: var(--text-tertiary)">
+                <p>&copy; 2026 Atul Dhanotiya. All rights reserved.</p>
+                <p>Built with ❤️ using HTML, CSS & JavaScript</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <button id="back-to-top" class="back-to-top" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="js/darkmode.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/projects.js"></script>
+</body>
+</html>

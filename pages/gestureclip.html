@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GestureClip | Atul Dhanotiya</title>
+    <meta name="description" content="GestureClip: Gesture-Based Clipboard Manager case study.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: { inter: ['Inter', 'sans-serif'] }
+        }
+      }
+    }
+    </script>
+    
+    <!-- Fonts & Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/animations.css">
+    <link rel="stylesheet" href="../css/darkmode.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../assets/logo.png">
+</head>
+<body class="antialiased">
+
+    <!-- Scroll Progress Bar -->
+    <div id="scroll-progress" class="scroll-progress"></div>
+
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="loading-screen">
+        <img src="../assets/logo.png" alt="AD Logo" class="loading-logo" width="80">
+        <h2 class="font-semibold text-lg mt-4" style="color: var(--text-primary)">Atul Dhanotiya</h2>
+        <p class="text-sm mt-2" style="color: var(--text-secondary)">Loading Case Study...</p>
+        <div class="loading-bar-container">
+            <div class="loading-bar"></div>
+        </div>
+    </div>
+
+    <!-- Navbar -->
+    <nav id="navbar" class="nav-glass">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex justify-between items-center">
+            <!-- Logo -->
+            <a href="../index.html#home"><img src="../assets/logo.png" alt="AD" class="h-8 w-auto"></a>
+            
+            <!-- Desktop Nav -->
+            <div class="desktop-nav hidden md:flex gap-1 items-center">
+                <a class="nav-link px-3 py-2 rounded-lg text-sm font-medium transition hover:bg-blue-50 dark:hover:bg-slate-800" style="color: var(--text-secondary)" href="../index.html#home">Home</a>
+                <a class="nav-link px-3 py-2 rounded-lg text-sm font-medium transition hover:bg-blue-50 dark:hover:bg-slate-800" style="color: var(--text-secondary)" href="../index.html#about">About</a>
+                <a class="nav-link px-3 py-2 rounded-lg text-sm font-medium transition hover:bg-blue-50 dark:hover:bg-slate-800" style="color: var(--text-secondary)" href="../index.html#experience">Experience</a>
+                <a class="nav-link px-3 py-2 rounded-lg text-sm font-medium transition hover:bg-blue-50 dark:hover:bg-slate-800" style="color: var(--text-secondary)" href="../index.html#skills">Skills</a>
+                <a class="nav-link px-3 py-2 rounded-lg text-sm font-medium transition" style="color: var(--text-secondary)" href="../projects.html">Projects</a>
+                <a class="nav-link px-3 py-2 rounded-lg text-sm font-medium transition hover:bg-blue-50 dark:hover:bg-slate-800" style="color: var(--text-secondary)" href="../index.html#contact">Contact</a>
+            </div>
+            
+            <!-- Right Actions -->
+            <div class="flex items-center gap-3">
+                <button id="theme-toggle" class="p-2 rounded-lg" title="Toggle theme" style="color: var(--text-primary)">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <!-- Hamburger -->
+                <button class="hamburger md:hidden" aria-label="Menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="mobile-menu">
+        <a href="../index.html#home" class="text-xl font-medium" style="color: var(--text-primary)">Home</a>
+        <a href="../index.html#about" class="text-xl font-medium" style="color: var(--text-primary)">About</a>
+        <a href="../index.html#experience" class="text-xl font-medium" style="color: var(--text-primary)">Experience</a>
+        <a href="../index.html#skills" class="text-xl font-medium" style="color: var(--text-primary)">Skills</a>
+        <a href="../projects.html" class="text-xl font-medium" style="color: var(--text-primary)">Projects</a>
+        <a href="../index.html#contact" class="text-xl font-medium" style="color: var(--text-primary)">Contact</a>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-16 px-4" style="background: var(--bg-secondary)">
+        <div class="max-w-4xl mx-auto text-center reveal" data-reveal="up">
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-4"><span class="gradient-text">GestureClip</span></h1>
+            <p class="text-xl sm:text-2xl font-semibold" style="color: var(--text-secondary)">Gesture-Based Clipboard Manager</p>
+        </div>
+    </section>
+
+    <!-- Content Section -->
+    <section class="pb-24 px-4 section-padding">
+        <div class="max-w-7xl mx-auto">
+            
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+                
+                <!-- Main Content -->
+                <div class="lg:col-span-2 space-y-12">
+                    
+                    <!-- Hero Image Placeholder -->
+                    <div class="reveal" data-reveal="scale">
+                        <div class="placeholder-img w-full rounded-2xl shadow-xl overflow-hidden" style="min-height: 400px">
+                            <i class="fas fa-hand-paper text-6xl"></i>
+                        </div>
+                    </div>
+
+                    <!-- Overview -->
+                    <div class="reveal" data-reveal="up">
+                        <h2 class="text-3xl font-bold mb-4" style="color: var(--text-primary)">Project Overview</h2>
+                        <p class="text-lg leading-relaxed mb-6" style="color: var(--text-secondary)">
+                            GestureClip is an innovative clipboard manager that uses hand gesture recognition for intuitive copy-paste operations. Built with Python, OpenCV, and MediaPipe, it enables users to perform clipboard operations using natural hand gestures, making the interaction more intuitive and accessible.
+                        </p>
+                    </div>
+
+                    <!-- Key Features Grid -->
+                    <div class="reveal" data-reveal="up">
+                        <h2 class="text-3xl font-bold mb-6" style="color: var(--text-primary)">Key Features</h2>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="card-hover">
+                                <div class="skill-icon mb-4"><i class="fas fa-hand-sparkles"></i></div>
+                                <h3 class="font-bold text-lg mb-2" style="color: var(--text-primary)">Hand Tracking</h3>
+                                <p class="text-sm" style="color: var(--text-secondary)">Real-time hand detection using MediaPipe.</p>
+                            </div>
+                            <div class="card-hover">
+                                <div class="skill-icon mb-4"><i class="fas fa-sign-language"></i></div>
+                                <h3 class="font-bold text-lg mb-2" style="color: var(--text-primary)">Gesture Recognition</h3>
+                                <p class="text-sm" style="color: var(--text-secondary)">Recognizes specific gestures for copy, paste, cut.</p>
+                            </div>
+                            <div class="card-hover">
+                                <div class="skill-icon mb-4"><i class="fas fa-clipboard-list"></i></div>
+                                <h3 class="font-bold text-lg mb-2" style="color: var(--text-primary)">Clipboard Integration</h3>
+                                <p class="text-sm" style="color: var(--text-secondary)">Seamless system clipboard integration.</p>
+                            </div>
+                            <div class="card-hover">
+                                <div class="skill-icon mb-4"><i class="fas fa-eye"></i></div>
+                                <h3 class="font-bold text-lg mb-2" style="color: var(--text-primary)">Visual Feedback</h3>
+                                <p class="text-sm" style="color: var(--text-secondary)">Real-time visual feedback for recognized gestures.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sidebar -->
+                <div class="lg:col-span-1 space-y-8">
+                    
+                    <!-- Info Card -->
+                    <div class="card-hover reveal" data-reveal="left">
+                        <h3 class="font-bold text-xl mb-6 border-b pb-4" style="color: var(--text-primary); border-color: var(--border-color)">Project Details</h3>
+                        <ul class="space-y-4">
+                            <li>
+                                <span class="block text-sm font-semibold mb-1" style="color: var(--text-secondary)">Type</span>
+                                <span class="text-base" style="color: var(--text-primary)">Desktop Application</span>
+                            </li>
+                            <li>
+                                <span class="block text-sm font-semibold mb-1" style="color: var(--text-secondary)">Status</span>
+                                <span class="text-base" style="color: var(--primary)">Live</span>
+                            </li>
+                            <li>
+                                <span class="block text-sm font-semibold mb-1" style="color: var(--text-secondary)">Team</span>
+                                <span class="text-base" style="color: var(--text-primary)">Solo Project</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Tech Stack Card -->
+                    <div class="card-hover reveal" data-reveal="left" data-delay="100">
+                        <h3 class="font-bold text-xl mb-4 border-b pb-4" style="color: var(--text-primary); border-color: var(--border-color)">Tech Stack</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1.5 text-sm font-medium rounded-lg" style="background: var(--bg-tertiary); color: var(--text-secondary)">Python</span>
+                            <span class="px-3 py-1.5 text-sm font-medium rounded-lg" style="background: var(--bg-tertiary); color: var(--text-secondary)">OpenCV</span>
+                            <span class="px-3 py-1.5 text-sm font-medium rounded-lg" style="background: var(--bg-tertiary); color: var(--text-secondary)">MediaPipe</span>
+                        </div>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="flex flex-col gap-4 reveal" data-reveal="left" data-delay="200">
+                        <a href="https://minegameing50.github.io/GestureClip/" target="_blank" class="gradient-btn text-center"><i class="fas fa-external-link-alt mr-2"></i>Live Demo</a>
+                        <a href="https://github.com/minegameing50/GestureClip" target="_blank" class="gradient-btn-outline text-center"><i class="fab fa-github mr-2"></i>GitHub Repo</a>
+                        <a href="../projects.html" class="py-3 text-center text-sm font-medium transition hover:underline" style="color: var(--text-secondary)"><i class="fas fa-arrow-left mr-2"></i>Back to Projects</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 mt-12" style="background: var(--bg-tertiary); border-top: 1px solid var(--border-color)">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-4 text-sm" style="color: var(--text-tertiary)">
+                <p>&copy; 2026 Atul Dhanotiya. All rights reserved.</p>
+                <div class="flex gap-4 text-xl">
+                    <a href="https://github.com/minegameing50" target="_blank" class="transition hover:-translate-y-1 hover:text-blue-500"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/atul-dhanotiya-648481356" target="_blank" class="transition hover:-translate-y-1 hover:text-blue-500"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <button id="back-to-top" class="back-to-top" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="../js/darkmode.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+</html>

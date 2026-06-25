@@ -1,0 +1,787 @@
+/* ============================================
+   ATUL DHANOTIYA - PORTFOLIO STYLESHEET
+   Main styles, design tokens, and components
+   ============================================ */
+
+/* ─────────────────────────────────────────────
+   1. CSS CUSTOM PROPERTIES (Design Tokens)
+   ───────────────────────────────────────────── */
+:root {
+  /* Primary palette */
+  --primary: #2563eb;
+  --primary-light: #3b82f6;
+  --primary-dark: #1d4ed8;
+  --primary-rgb: 37, 99, 235;
+
+  /* Backgrounds */
+  --bg-primary: #f8fafc;
+  --bg-secondary: #ffffff;
+  --bg-tertiary: #f1f5f9;
+
+  /* Text */
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-tertiary: #64748b;
+
+  /* Borders */
+  --border-color: #e2e8f0;
+
+  /* Glassmorphism */
+  --glass-bg: rgba(255, 255, 255, 0.8);
+  --glass-border: rgba(255, 255, 255, 0.18);
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+
+  /* Radii */
+  --radius-sm: 0.5rem;
+  --radius: 0.75rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+}
+
+/* ─────────────────────────────────────────────
+   2. BASE / RESET STYLES
+   ───────────────────────────────────────────── */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+/* Text selection */
+::selection {
+  background: rgba(37, 99, 235, 0.2);
+  color: var(--primary);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(var(--primary-rgb), 0.35);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(var(--primary-rgb), 0.55);
+}
+
+/* Images */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ─────────────────────────────────────────────
+   3. GLASSMORPHISM UTILITIES
+   ───────────────────────────────────────────── */
+.glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+}
+
+/* Navbar glass variant */
+.nav-glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--glass-border);
+  box-shadow: var(--shadow-sm);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-hidden {
+  transform: translateY(-100%);
+}
+
+/* ─────────────────────────────────────────────
+   4. GRADIENT UTILITIES
+   ───────────────────────────────────────────── */
+.gradient-text {
+  background: linear-gradient(135deg, var(--primary), #7c3aed);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Primary CTA button */
+.gradient-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: linear-gradient(135deg, var(--primary), #4f46e5);
+  color: #ffffff;
+  padding: 0.75rem 1.75rem;
+  border-radius: var(--radius);
+  font-weight: 600;
+  font-size: 0.95rem;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+  box-shadow: 0 4px 15px rgba(var(--primary-rgb), 0.3);
+}
+
+.gradient-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(var(--primary-rgb), 0.4);
+  filter: brightness(1.1);
+}
+
+/* Outline variant */
+.gradient-btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: 2px solid var(--primary);
+  color: var(--primary);
+  background: transparent;
+  padding: 0.75rem 1.75rem;
+  border-radius: var(--radius);
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+.gradient-btn-outline:hover {
+  background: var(--primary);
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+/* ─────────────────────────────────────────────
+   5. SECTION SPACING
+   ───────────────────────────────────────────── */
+.section-padding {
+  padding: 6rem 0;
+}
+
+/* ─────────────────────────────────────────────
+   6. LOADING SCREEN
+   ───────────────────────────────────────────── */
+.loading-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: var(--bg-primary);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.5s ease;
+}
+
+.loading-screen.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.loading-logo {
+  width: 80px;
+  height: 80px;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+.loading-bar-container {
+  width: 200px;
+  height: 3px;
+  background: var(--border-color);
+  border-radius: 10px;
+  margin-top: 1.5rem;
+  overflow: hidden;
+}
+
+.loading-bar {
+  height: 100%;
+  background: linear-gradient(90deg, var(--primary), #7c3aed);
+  border-radius: 10px;
+  width: 0%;
+  animation: loadingProgress 1.5s ease forwards;
+}
+
+/* ─────────────────────────────────────────────
+   7. SCROLL PROGRESS BAR
+   ───────────────────────────────────────────── */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary), #7c3aed);
+  z-index: 9999;
+  width: 0%;
+  transition: width 0.1s linear;
+}
+
+/* ─────────────────────────────────────────────
+   8. CUSTOM CURSOR (desktop only)
+   ───────────────────────────────────────────── */
+.cursor-dot {
+  width: 8px;
+  height: 8px;
+  background: var(--primary);
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 10000;
+  transition: transform 0.15s ease;
+  top: 0;
+  left: 0;
+}
+
+.cursor-outline {
+  width: 35px;
+  height: 35px;
+  border: 2px solid rgba(var(--primary-rgb), 0.4);
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 10000;
+  transition: transform 0.1s ease, border-color 0.3s ease, background 0.3s ease;
+  top: 0;
+  left: 0;
+}
+
+/* Cursor hover state — expanded ring */
+.cursor-hover .cursor-outline {
+  transform: scale(1.5);
+  border-color: var(--primary);
+  background: rgba(var(--primary-rgb), 0.1);
+}
+
+/* Hide custom cursor on touch devices */
+@media (pointer: coarse) {
+  .cursor-dot,
+  .cursor-outline {
+    display: none;
+  }
+}
+
+/* ─────────────────────────────────────────────
+   9. HERO SECTION
+   ───────────────────────────────────────────── */
+.hero-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Ambient glow — top-right */
+.hero-glow {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(var(--primary-rgb), 0.15), transparent 70%);
+  border-radius: 50%;
+  filter: blur(60px);
+  top: -10%;
+  right: -5%;
+  animation: float 8s ease-in-out infinite;
+  pointer-events: none;
+}
+
+/* Ambient glow — bottom-left (indigo) */
+.hero-glow-2 {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(124, 58, 237, 0.12), transparent 70%);
+  border-radius: 50%;
+  filter: blur(60px);
+  bottom: -10%;
+  left: -5%;
+  animation: float 8s ease-in-out infinite 4s;
+  pointer-events: none;
+}
+
+/* Decorative floating shapes */
+.floating-shape {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.08;
+  background: var(--primary);
+  animation: float infinite ease-in-out;
+  pointer-events: none;
+}
+
+.shape-1 {
+  width: 80px;
+  height: 80px;
+  top: 20%;
+  left: 10%;
+  animation-duration: 6s;
+}
+
+.shape-2 {
+  width: 120px;
+  height: 120px;
+  top: 60%;
+  right: 15%;
+  animation-duration: 8s;
+}
+
+.shape-3 {
+  width: 60px;
+  height: 60px;
+  bottom: 20%;
+  left: 30%;
+  animation-duration: 7s;
+}
+
+.shape-4 {
+  width: 90px;
+  height: 90px;
+  top: 40%;
+  right: 40%;
+  animation-duration: 9s;
+}
+
+/* Hero image */
+.hero-image-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-image {
+  width: 320px;
+  height: 320px;
+  border-radius: 1rem;
+  object-fit: cover;
+  border: 4px solid rgba(var(--primary-rgb), 0.3);
+  box-shadow: 0 0 40px rgba(var(--primary-rgb), 0.2);
+}
+
+.hero-image-ring {
+  position: absolute;
+  inset: -8px;
+  border-radius: inherit;
+  border: 2px dashed rgba(var(--primary-rgb), 0.3);
+  animation: spin 20s linear infinite;
+}
+
+/* ─────────────────────────────────────────────
+   10. BACK TO TOP BUTTON
+   ───────────────────────────────────────────── */
+.back-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background: var(--primary);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  opacity: 0;
+  transform: translateY(20px);
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 12px rgba(var(--primary-rgb), 0.3);
+  border: none;
+  cursor: pointer;
+  font-size: 1.15rem;
+}
+
+.back-to-top.visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: all;
+}
+
+.back-to-top:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(var(--primary-rgb), 0.45);
+}
+
+/* ─────────────────────────────────────────────
+   11. CARD STYLES
+   ───────────────────────────────────────────── */
+
+/* Generic hoverable card */
+.card-hover {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(var(--primary-rgb), 0.3);
+}
+
+/* Project card (with image overflow) */
+.project-card {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(var(--primary-rgb), 0.3);
+}
+
+.project-card img {
+  transition: transform 0.5s ease;
+}
+
+.project-card:hover img {
+  transform: scale(1.05);
+}
+
+/* Skill card */
+.skill-card {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.skill-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(var(--primary-rgb), 0.3);
+}
+
+.skill-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: var(--radius);
+  background: rgba(var(--primary-rgb), 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem;
+  font-size: 1.5rem;
+  color: var(--primary);
+}
+
+/* Achievement card */
+.achievement-card {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.achievement-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(var(--primary-rgb), 0.3);
+}
+
+/* Certificate card */
+.certificate-card {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.certificate-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(var(--primary-rgb), 0.3);
+}
+
+/* ─────────────────────────────────────────────
+   12. TIMELINE (Education / Experience)
+   ───────────────────────────────────────────── */
+.timeline {
+  position: relative;
+  padding-left: 2rem;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--primary), #7c3aed);
+}
+
+.timeline-item {
+  position: relative;
+  padding-left: 2rem;
+  margin-bottom: 2rem;
+}
+
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -2.35rem;
+  top: 0.5rem;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--primary);
+  border: 3px solid var(--bg-primary);
+  z-index: 1;
+}
+
+.timeline-date {
+  font-size: 0.875rem;
+  color: var(--primary);
+  font-weight: 600;
+}
+
+/* ─────────────────────────────────────────────
+   13. TYPEWRITER EFFECT
+   ───────────────────────────────────────────── */
+.typewriter-text {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.typewriter-cursor {
+  display: inline-block;
+  width: 3px;
+  height: 1.2em;
+  background: var(--primary);
+  margin-left: 2px;
+  animation: blink 1s step-end infinite;
+  vertical-align: text-bottom;
+}
+
+/* ─────────────────────────────────────────────
+   14. CONTACT FORM
+   ───────────────────────────────────────────── */
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.875rem 1rem;
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  color: var(--text-primary);
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: var(--primary);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(var(--primary-rgb), 0.1);
+}
+
+.contact-form textarea {
+  min-height: 140px;
+  resize: vertical;
+}
+
+/* ─────────────────────────────────────────────
+   15. MOBILE NAVIGATION
+   ───────────────────────────────────────────── */
+.mobile-menu {
+  position: fixed;
+  inset: 0;
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  transform: translateX(100%);
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mobile-menu.active {
+  transform: translateX(0);
+}
+
+/* Hamburger toggle */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  z-index: 1001;
+  background: none;
+  border: none;
+  padding: 4px;
+}
+
+.hamburger span {
+  display: block;
+  width: 25px;
+  height: 2px;
+  background: var(--text-primary);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  border-radius: 2px;
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translateY(7px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translateY(-7px);
+}
+
+/* ─────────────────────────────────────────────
+   16. STATUS BADGE (e.g. "Open for Internships")
+   ───────────────────────────────────────────── */
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.375rem 0.875rem;
+  background: rgba(34, 197, 94, 0.08);
+  color: #16a34a;
+  border-radius: 9999px;
+  font-weight: 500;
+  font-size: 0.875rem;
+}
+
+/* Pulsing dot */
+.status-badge::before {
+  content: '';
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #22c55e;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+/* ─────────────────────────────────────────────
+   17. PLACEHOLDER IMAGE
+   ───────────────────────────────────────────── */
+.placeholder-img {
+  background: linear-gradient(135deg, var(--bg-tertiary), rgba(var(--primary-rgb), 0.1));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+  border-radius: var(--radius);
+  color: var(--text-tertiary);
+  font-size: 3rem;
+}
+
+/* ─────────────────────────────────────────────
+   18. RESPONSIVE BREAKPOINTS
+   ───────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .desktop-nav {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .hero-section {
+    flex-direction: column-reverse;
+    text-align: center;
+    padding-top: 6rem;
+  }
+
+  .hero-image {
+    width: 220px;
+    height: 220px;
+  }
+
+  .section-padding {
+    padding: 4rem 0;
+  }
+
+  .hero-glow,
+  .hero-glow-2 {
+    width: 300px;
+    height: 300px;
+  }
+
+  .floating-shape {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-image {
+    width: 180px;
+    height: 180px;
+  }
+
+  .section-padding {
+    padding: 3rem 0;
+  }
+
+  .gradient-btn,
+  .gradient-btn-outline {
+    padding: 0.625rem 1.25rem;
+    font-size: 0.875rem;
+  }
+
+  .card-hover,
+  .achievement-card {
+    padding: 1.25rem;
+  }
+
+  .skill-card {
+    padding: 1.5rem;
+  }
+
+  .loading-bar-container {
+    width: 160px;
+  }
+}
