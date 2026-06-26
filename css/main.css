@@ -1,0 +1,1241 @@
+/* --- css/style.css --- */
+/* ============================================
+   ATUL DHANOTIYA - PORTFOLIO STYLESHEET
+   Main styles, design tokens, and components
+   ============================================ */
+
+/* ─────────────────────────────────────────────
+   1. CSS CUSTOM PROPERTIES (Design Tokens)
+   ───────────────────────────────────────────── */
+:root {
+  /* Primary palette */
+  --primary: #2563eb;
+  --primary-light: #3b82f6;
+  --primary-dark: #1d4ed8;
+  --primary-rgb: 37, 99, 235;
+
+  /* Backgrounds */
+  --bg-primary: #f8fafc;
+  --bg-secondary: #ffffff;
+  --bg-tertiary: #f1f5f9;
+
+  /* Text */
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-tertiary: #64748b;
+
+  /* Borders */
+  --border-color: #e2e8f0;
+
+  /* Glassmorphism */
+  --glass-bg: rgba(255, 255, 255, 0.8);
+  --glass-border: rgba(255, 255, 255, 0.18);
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+
+  /* Radii */
+  --radius-sm: 0.5rem;
+  --radius: 0.75rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+}
+
+/* ─────────────────────────────────────────────
+   2. BASE / RESET STYLES
+   ───────────────────────────────────────────── */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(var(--primary-rgb), 0.35) transparent;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+/* Text selection */
+::selection {
+  background: rgba(37, 99, 235, 0.2);
+  color: var(--primary);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(var(--primary-rgb), 0.35);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(var(--primary-rgb), 0.55);
+}
+
+/* Images */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ─────────────────────────────────────────────
+   3. GLASSMORPHISM UTILITIES
+   ───────────────────────────────────────────── */
+.glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+}
+
+/* Navbar glass variant */
+.nav-glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--glass-border);
+  box-shadow: var(--shadow-sm);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-glass.scrolled {
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: var(--shadow);
+}
+[data-theme='dark'] .nav-glass.scrolled {
+  background: rgba(11, 17, 32, 0.95);
+}
+
+.nav-hidden {
+  transform: translateY(-100%);
+}
+
+.nav-link.active {
+  color: var(--primary) !important;
+  background: rgba(var(--primary-rgb), 0.1);
+}
+
+/* ─────────────────────────────────────────────
+   4. GRADIENT UTILITIES
+   ───────────────────────────────────────────── */
+.gradient-text {
+  background: linear-gradient(135deg, var(--primary), #7c3aed);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Primary CTA button */
+.gradient-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: linear-gradient(135deg, var(--primary), #4f46e5);
+  color: #ffffff;
+  padding: 0.75rem 1.75rem;
+  border-radius: var(--radius);
+  font-weight: 600;
+  font-size: 0.95rem;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+  box-shadow: 0 4px 15px rgba(var(--primary-rgb), 0.3);
+}
+
+.gradient-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(var(--primary-rgb), 0.4);
+  filter: brightness(1.1);
+}
+
+/* Outline variant */
+.gradient-btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: 2px solid var(--primary);
+  color: var(--primary);
+  background: transparent;
+  padding: 0.75rem 1.75rem;
+  border-radius: var(--radius);
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+.gradient-btn-outline:hover {
+  background: var(--primary);
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+/* ─────────────────────────────────────────────
+   5. SECTION SPACING
+   ───────────────────────────────────────────── */
+.section-padding {
+  padding: 6rem 0;
+}
+
+/* ─────────────────────────────────────────────
+   6. LOADING SCREEN
+   ───────────────────────────────────────────── */
+.loading-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: var(--bg-primary);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.5s ease;
+}
+
+.loading-screen.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.loading-logo {
+  width: 80px;
+  height: 80px;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+.loading-bar-container {
+  width: 200px;
+  height: 3px;
+  background: var(--border-color);
+  border-radius: 10px;
+  margin-top: 1.5rem;
+  overflow: hidden;
+}
+
+.loading-bar {
+  height: 100%;
+  background: linear-gradient(90deg, var(--primary), #7c3aed);
+  border-radius: 10px;
+  width: 0%;
+  animation: loadingProgress 1.5s ease forwards;
+}
+
+/* ─────────────────────────────────────────────
+   7. SCROLL PROGRESS BAR
+   ───────────────────────────────────────────── */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary), #7c3aed);
+  z-index: 9999;
+  width: 0%;
+  transition: width 0.1s linear;
+}
+
+/* ─────────────────────────────────────────────
+   8. CUSTOM CURSOR (desktop only)
+   ───────────────────────────────────────────── */
+.cursor-dot {
+  width: 8px;
+  height: 8px;
+  background: var(--primary);
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 10000;
+  transition: transform 0.15s ease;
+  top: 0;
+  left: 0;
+}
+
+.cursor-outline {
+  width: 35px;
+  height: 35px;
+  border: 2px solid rgba(var(--primary-rgb), 0.4);
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 10000;
+  transition: transform 0.1s ease, border-color 0.3s ease, background 0.3s ease;
+  top: 0;
+  left: 0;
+}
+
+/* Cursor hover state — expanded ring */
+.cursor-hover .cursor-outline {
+  transform: scale(1.5);
+  border-color: var(--primary);
+  background: rgba(var(--primary-rgb), 0.1);
+}
+
+/* Hide custom cursor on touch devices */
+@media (pointer: coarse) {
+  .cursor-dot,
+  .cursor-outline {
+    display: none;
+  }
+}
+
+/* ─────────────────────────────────────────────
+   9. HERO SECTION
+   ───────────────────────────────────────────── */
+.hero-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Ambient glow — top-right */
+.hero-glow {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(var(--primary-rgb), 0.15), transparent 70%);
+  border-radius: 50%;
+  filter: blur(60px);
+  top: -10%;
+  right: -5%;
+  animation: float 8s ease-in-out infinite;
+  pointer-events: none;
+}
+
+/* Ambient glow — bottom-left (indigo) */
+.hero-glow-2 {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(124, 58, 237, 0.12), transparent 70%);
+  border-radius: 50%;
+  filter: blur(60px);
+  bottom: -10%;
+  left: -5%;
+  animation: float 8s ease-in-out infinite 4s;
+  pointer-events: none;
+}
+
+/* Decorative floating shapes */
+.floating-shape {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.08;
+  background: var(--primary);
+  animation: float infinite ease-in-out;
+  pointer-events: none;
+}
+
+.shape-1 {
+  width: 80px;
+  height: 80px;
+  top: 20%;
+  left: 10%;
+  animation-duration: 6s;
+}
+
+.shape-2 {
+  width: 120px;
+  height: 120px;
+  top: 60%;
+  right: 15%;
+  animation-duration: 8s;
+}
+
+.shape-3 {
+  width: 60px;
+  height: 60px;
+  bottom: 20%;
+  left: 30%;
+  animation-duration: 7s;
+}
+
+.shape-4 {
+  width: 90px;
+  height: 90px;
+  top: 40%;
+  right: 40%;
+  animation-duration: 9s;
+}
+
+/* Hero image */
+.hero-image-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-image {
+  width: 320px;
+  height: 320px;
+  border-radius: 1rem;
+  object-fit: cover;
+  object-position: top;
+  border: 4px solid rgba(var(--primary-rgb), 0.3);
+  box-shadow: 0 0 40px rgba(var(--primary-rgb), 0.2);
+}
+
+.hero-image-ring {
+  position: absolute;
+  inset: -8px;
+  border-radius: inherit;
+  border: 2px dashed rgba(var(--primary-rgb), 0.3);
+  animation: spin 20s linear infinite;
+}
+
+/* ─────────────────────────────────────────────
+   10. BACK TO TOP BUTTON
+   ───────────────────────────────────────────── */
+.back-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background: var(--primary);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  opacity: 0;
+  transform: translateY(20px);
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 12px rgba(var(--primary-rgb), 0.3);
+  border: none;
+  cursor: pointer;
+  font-size: 1.15rem;
+}
+
+.back-to-top.visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: all;
+}
+
+.back-to-top:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(var(--primary-rgb), 0.45);
+}
+
+/* ─────────────────────────────────────────────
+   11. CARD STYLES
+   ───────────────────────────────────────────── */
+
+/* Generic hoverable card */
+.card-hover,
+.project-card,
+.skill-card,
+.achievement-card,
+.certificate-card {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.card-hover:hover,
+.project-card:hover,
+.skill-card:hover,
+.achievement-card:hover,
+.certificate-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(var(--primary-rgb), 0.3);
+}
+
+/* Card-specific spacing/overflows */
+.card-hover { padding: 1.5rem; }
+.project-card { overflow: hidden; }
+.project-card img { transition: transform 0.5s ease; }
+.project-card:hover img { transform: scale(1.05); }
+.skill-card { padding: 2rem; text-align: center; }
+.achievement-card { padding: 1.5rem; text-align: center; }
+.certificate-card { overflow: hidden; }
+
+.skill-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: var(--radius);
+  background: rgba(var(--primary-rgb), 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem;
+  font-size: 1.5rem;
+  color: var(--primary);
+}
+
+/* ─────────────────────────────────────────────
+   12. TIMELINE (Education / Experience)
+   ───────────────────────────────────────────── */
+.timeline {
+  position: relative;
+  padding-left: 2rem;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--primary), #7c3aed);
+}
+
+.timeline-item {
+  position: relative;
+  padding-left: 2rem;
+  margin-bottom: 2rem;
+}
+
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -2.35rem;
+  top: 0.5rem;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--primary);
+  border: 3px solid var(--bg-primary);
+  z-index: 1;
+}
+
+.timeline-date {
+  font-size: 0.875rem;
+  color: var(--primary);
+  font-weight: 600;
+}
+
+/* ─────────────────────────────────────────────
+   13. TYPEWRITER EFFECT
+   ───────────────────────────────────────────── */
+.typewriter-text {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.typewriter-cursor {
+  display: inline-block;
+  width: 3px;
+  height: 1.2em;
+  background: var(--primary);
+  margin-left: 2px;
+  animation: blink 1s step-end infinite;
+  vertical-align: text-bottom;
+}
+
+/* ─────────────────────────────────────────────
+   14. ACCESSIBILITY & FOCUS STYLES
+   ───────────────────────────────────────────── */
+:focus-visible {
+  outline: 3px solid var(--primary);
+  outline-offset: 2px;
+}
+
+/* Social link hover */
+.social-link {
+  transition: all 0.3s ease;
+}
+
+.social-link:hover {
+  background: var(--primary);
+  color: #fff !important;
+  border-color: var(--primary) !important;
+  transform: scale(1.1);
+}
+
+/* Filter buttons */
+.filter-btn {
+  background: var(--bg-tertiary);
+  color: var(--text-secondary);
+}
+
+.filter-btn.active {
+  background: var(--primary) !important;
+  color: white !important;
+}
+
+/* ─────────────────────────────────────────────
+   15. MOBILE NAVIGATION
+   ───────────────────────────────────────────── */
+.mobile-menu {
+  position: fixed;
+  inset: 0;
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  transform: translateX(100%);
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mobile-menu.active {
+  transform: translateX(0);
+}
+
+/* Hamburger toggle */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  z-index: 1001;
+  background: none;
+  border: none;
+  padding: 4px;
+}
+
+.hamburger span {
+  display: block;
+  width: 25px;
+  height: 2px;
+  background: var(--text-primary);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  border-radius: 2px;
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translateY(7px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translateY(-7px);
+}
+
+/* ─────────────────────────────────────────────
+   16. STATUS BADGE (e.g. "Open for Internships")
+   ───────────────────────────────────────────── */
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.375rem 0.875rem;
+  background: rgba(34, 197, 94, 0.08);
+  color: #16a34a;
+  border-radius: 9999px;
+  font-weight: 500;
+  font-size: 0.875rem;
+}
+
+/* Pulsing dot */
+.status-badge::before {
+  content: '';
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #22c55e;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+/* ─────────────────────────────────────────────
+   17. PLACEHOLDER IMAGE
+   ───────────────────────────────────────────── */
+.placeholder-img {
+  background: linear-gradient(135deg, var(--bg-tertiary), rgba(var(--primary-rgb), 0.1));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+  border-radius: var(--radius);
+  color: var(--text-tertiary);
+  font-size: 3rem;
+}
+
+/* ─────────────────────────────────────────────
+   18. RESPONSIVE BREAKPOINTS
+   ───────────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .hero-image {
+    width: 280px;
+    height: 280px;
+  }
+}
+
+@media (max-width: 768px) {
+  .desktop-nav {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .hero-section {
+    flex-direction: column-reverse;
+    text-align: center;
+    padding-top: 6rem;
+  }
+
+  .hero-image {
+    width: 220px;
+    height: 220px;
+  }
+
+  .section-padding {
+    padding: 4rem 0;
+  }
+
+  .hero-glow,
+  .hero-glow-2 {
+    width: 300px;
+    height: 300px;
+  }
+
+  .floating-shape {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-image {
+    width: 180px;
+    height: 180px;
+  }
+
+  .section-padding {
+    padding: 3rem 0;
+  }
+
+  .gradient-btn,
+  .gradient-btn-outline {
+    padding: 0.625rem 1.25rem;
+    font-size: 0.875rem;
+  }
+
+  .card-hover,
+  .achievement-card {
+    padding: 1.25rem;
+  }
+
+  .skill-card {
+    padding: 1.5rem;
+  }
+
+  .loading-bar-container {
+    width: 160px;
+  }
+}
+
+
+/* --- css/animations.css --- */
+/* ============================================
+   ATUL DHANOTIYA - ANIMATIONS & TRANSITIONS
+   Keyframes, scroll-reveal, hover effects
+   ============================================ */
+
+/* ─────────────────────────────────────────────
+   1. KEYFRAME ANIMATIONS
+   ───────────────────────────────────────────── */
+
+/* Fade + direction */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Scale variants */
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Rotate entrance */
+@keyframes rotateIn {
+  from {
+    opacity: 0;
+    transform: rotate(-10deg) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: rotate(0) scale(1);
+  }
+}
+
+/* Floating / levitation */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+/* Gradient background motion */
+@keyframes gradientMotion {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Subtle pulse */
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
+
+/* Shimmer / skeleton loader */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* Cursor blink */
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+/* Continuous rotation */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Loading bar fill */
+@keyframes loadingProgress {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+/* Dramatic slide-up */
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Elastic bounce entrance */
+@keyframes bounceIn {
+  0% {
+    transform: scale(0.3);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  70% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* ─────────────────────────────────────────────
+   2. SCROLL-REVEAL SYSTEM
+   Elements start hidden, become visible via JS
+   adding the .active class on scroll.
+   ───────────────────────────────────────────── */
+.reveal {
+  opacity: 0;
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.reveal.active {
+  opacity: 1;
+}
+
+/* Direction variants — initial transform states */
+.reveal[data-reveal='up'] {
+  transform: translateY(40px);
+}
+
+.reveal[data-reveal='down'] {
+  transform: translateY(-40px);
+}
+
+.reveal[data-reveal='left'] {
+  transform: translateX(-40px);
+}
+
+.reveal[data-reveal='right'] {
+  transform: translateX(40px);
+}
+
+.reveal[data-reveal='scale'] {
+  transform: scale(0.85);
+}
+
+.reveal[data-reveal='zoom'] {
+  transform: scale(0.5);
+}
+
+/* Active state resets transforms */
+.reveal.active[data-reveal='up'],
+.reveal.active[data-reveal='down'],
+.reveal.active[data-reveal='left'],
+.reveal.active[data-reveal='right'] {
+  transform: translate(0);
+}
+
+.reveal.active[data-reveal='scale'],
+.reveal.active[data-reveal='zoom'] {
+  transform: scale(1);
+}
+
+/* ─────────────────────────────────────────────
+   3. STAGGER DELAYS (data-delay attribute)
+   Use on child elements to create cascade effect
+   ───────────────────────────────────────────── */
+.reveal[data-delay='100'] {
+  transition-delay: 0.1s;
+}
+
+.reveal[data-delay='200'] {
+  transition-delay: 0.2s;
+}
+
+.reveal[data-delay='300'] {
+  transition-delay: 0.3s;
+}
+
+.reveal[data-delay='400'] {
+  transition-delay: 0.4s;
+}
+
+.reveal[data-delay='500'] {
+  transition-delay: 0.5s;
+}
+
+.reveal[data-delay='600'] {
+  transition-delay: 0.6s;
+}
+
+/* ─────────────────────────────────────────────
+   4. HOVER ANIMATIONS
+   ───────────────────────────────────────────── */
+
+/* Card lift on hover */
+.card-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-lift:hover {
+  transform: translateY(-8px);
+}
+
+/* Glow ring behind buttons */
+.btn-glow {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-glow::after {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  background: linear-gradient(45deg, var(--primary), #7c3aed, var(--primary));
+  z-index: -1;
+  border-radius: inherit;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  filter: blur(8px);
+}
+
+.btn-glow:hover::after {
+  opacity: 0.6;
+}
+
+/* ─────────────────────────────────────────────
+   5. ENTRANCE ANIMATION HELPER
+   ───────────────────────────────────────────── */
+.animate-in {
+  animation: fadeUp 0.6s ease forwards;
+}
+
+/* ─────────────────────────────────────────────
+   6. GRADIENT MOTION (hero backgrounds)
+   ───────────────────────────────────────────── */
+.gradient-animate {
+  background-size: 200% 200%;
+  animation: gradientMotion 8s ease infinite;
+}
+
+/* ─────────────────────────────────────────────
+   7. REDUCED MOTION PREFERENCE
+   Respect users who prefer reduced motion
+   ───────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+
+  .floating-shape,
+  .hero-glow,
+  .hero-glow-2 {
+    animation: none;
+  }
+}
+
+
+/* --- css/darkmode.css --- */
+/* ============================================
+   ATUL DHANOTIYA - DARK MODE OVERRIDES
+   Variable swaps & component adjustments
+   ============================================ */
+
+/* ─────────────────────────────────────────────
+   1. THEME TRANSITION
+   Temporarily applied during toggle to
+   animate color changes smoothly.
+   ───────────────────────────────────────────── */
+html.theme-transition,
+html.theme-transition *,
+html.theme-transition *::before,
+html.theme-transition *::after {
+  transition: background-color 0.5s ease,
+              color 0.5s ease,
+              border-color 0.5s ease,
+              box-shadow 0.5s ease !important;
+}
+
+/* ─────────────────────────────────────────────
+   2. DARK MODE CUSTOM PROPERTIES
+   Overrides every token defined on :root
+   ───────────────────────────────────────────── */
+[data-theme='dark'],
+html.dark {
+  --bg-primary: #0b1120;
+  --bg-secondary: #1e293b;
+  --bg-tertiary: #0f172a;
+
+  --text-primary: #f1f5f9;
+  --text-secondary: #94a3b8;
+  --text-tertiary: #64748b;
+
+  --border-color: #1e293b;
+
+  --glass-bg: rgba(15, 23, 42, 0.85);
+  --glass-border: rgba(51, 65, 85, 0.3);
+
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+  --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -2px rgba(0, 0, 0, 0.2);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -4px rgba(0, 0, 0, 0.2);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 8px 10px -6px rgba(0, 0, 0, 0.2);
+}
+
+/* ─────────────────────────────────────────────
+   3. COMPONENT-SPECIFIC OVERRIDES
+   Fine-tune components that need more than
+   a simple variable swap.
+   ───────────────────────────────────────────── */
+
+/* Loading screen */
+[data-theme='dark'] .loading-screen {
+  background: #0b1120;
+}
+
+/* Navbar */
+[data-theme='dark'] .nav-glass {
+  background: rgba(11, 17, 32, 0.85);
+  border-bottom-color: var(--border-color);
+}
+
+/* Cards */
+[data-theme='dark'] .card-hover {
+  background: var(--bg-secondary);
+  border-color: var(--border-color);
+}
+
+[data-theme='dark'] .skill-card {
+  background: var(--bg-secondary);
+}
+
+/* Outline button */
+[data-theme='dark'] .gradient-btn-outline {
+  border-color: var(--primary-light);
+  color: var(--primary-light);
+}
+
+/* Form fields (removed) */
+
+/* Status badge */
+[data-theme='dark'] .status-badge {
+  background: rgba(34, 197, 94, 0.1);
+}
+
+/* Placeholder image */
+[data-theme='dark'] .placeholder-img {
+  background: linear-gradient(135deg, var(--bg-secondary), rgba(var(--primary-rgb), 0.15));
+}
+
+/* Slightly dim images for comfort */
+[data-theme='dark'] img {
+  filter: brightness(0.95);
+}
+
+/* Hero image ring */
+[data-theme='dark'] .hero-image {
+  border-color: rgba(var(--primary-rgb), 0.4);
+}
+
+/* Timeline gradient */
+[data-theme='dark'] .timeline::before {
+  background: linear-gradient(to bottom, var(--primary-light), #8b5cf6);
+}
+
+/* Back to top glow */
+[data-theme='dark'] .back-to-top {
+  box-shadow: 0 4px 15px rgba(var(--primary-rgb), 0.3);
+}
+
+/* Mobile menu overlay */
+[data-theme='dark'] .mobile-menu {
+  background: rgba(11, 17, 32, 0.95);
+}
+
+/* Text selection */
+[data-theme='dark'] ::selection {
+  background: rgba(59, 130, 246, 0.3);
+}
+
+/* Scrollbar track */
+[data-theme='dark'] ::-webkit-scrollbar-track {
+  background: #0b1120;
+}
+
+

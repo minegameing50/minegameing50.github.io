@@ -5,7 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BiasGuard AI | Atul Dhanotiya</title>
     <meta name="description" content="BiasGuard AI: ML bias detection tool case study.">
-    
+    <meta name="author" content="Atul Dhanotiya">
+    <!-- Open Graph -->
+    <meta property="og:title" content="BiasGuard AI | Case Study">
+    <meta property="og:description" content="BiasGuard AI: AI tool to detect and mitigate bias in ML models.">
+    <meta property="og:image" content="https://minegameing50.github.io/portfolio/assets/biasguard.png">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://minegameing50.github.io/portfolio/pages/biasguard.html">
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -18,24 +24,17 @@
       }
     }
     </script>
-    
     <!-- Fonts & Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/animations.css">
-    <link rel="stylesheet" href="../css/darkmode.css">
-    
+    <link rel="stylesheet" href="../css/main.css">
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="../assets/logo.png">
 </head>
 <body class="antialiased">
-
     <!-- Scroll Progress Bar -->
     <div id="scroll-progress" class="scroll-progress"></div>
-
     <!-- Loading Screen -->
     <div id="loading-screen" class="loading-screen">
         <img src="../assets/logo.png" alt="AD Logo" class="loading-logo" width="80">
@@ -45,13 +44,11 @@
             <div class="loading-bar"></div>
         </div>
     </div>
-
     <!-- Navbar -->
     <nav id="navbar" class="nav-glass">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex justify-between items-center">
             <!-- Logo -->
             <a href="../index.html#home"><img src="../assets/logo.png" alt="AD" class="h-8 w-auto"></a>
-            
             <!-- Desktop Nav -->
             <div class="desktop-nav hidden md:flex gap-1 items-center">
                 <a class="nav-link px-3 py-2 rounded-lg text-sm font-medium transition hover:bg-blue-50 dark:hover:bg-slate-800" style="color: var(--text-secondary)" href="../index.html#home">Home</a>
@@ -61,7 +58,6 @@
                 <a class="nav-link px-3 py-2 rounded-lg text-sm font-medium transition" style="color: var(--text-secondary)" href="../projects.html">Projects</a>
                 <a class="nav-link px-3 py-2 rounded-lg text-sm font-medium transition hover:bg-blue-50 dark:hover:bg-slate-800" style="color: var(--text-secondary)" href="../index.html#contact">Contact</a>
             </div>
-            
             <!-- Right Actions -->
             <div class="flex items-center gap-3">
                 <button id="theme-toggle" class="p-2 rounded-lg" title="Toggle theme" style="color: var(--text-primary)">
@@ -74,7 +70,6 @@
             </div>
         </div>
     </nav>
-
     <!-- Mobile Menu -->
     <div id="mobile-menu" class="mobile-menu">
         <a href="../index.html#home" class="text-xl font-medium" style="color: var(--text-primary)">Home</a>
@@ -84,7 +79,6 @@
         <a href="../projects.html" class="text-xl font-medium" style="color: var(--text-primary)">Projects</a>
         <a href="../index.html#contact" class="text-xl font-medium" style="color: var(--text-primary)">Contact</a>
     </div>
-
     <!-- Hero Section -->
     <section class="pt-32 pb-16 px-4" style="background: var(--bg-secondary)">
         <div class="max-w-4xl mx-auto text-center reveal" data-reveal="up">
@@ -92,42 +86,33 @@
             <p class="text-xl sm:text-2xl font-semibold" style="color: var(--text-secondary)">ML Bias Detection Tool</p>
         </div>
     </section>
-
     <!-- Content Section -->
     <section class="pb-24 px-4 section-padding">
         <div class="max-w-7xl mx-auto">
-            
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
-                
                 <!-- Main Content -->
                 <div class="lg:col-span-2 space-y-12">
-                    
                     <!-- Hero Image Placeholder -->
                     <div class="reveal" data-reveal="scale">
-                        <div class="placeholder-img w-full rounded-2xl shadow-xl overflow-hidden" style="min-height: 400px">
-                            <i class="fas fa-brain text-6xl"></i>
-                        </div>
+                        <img src="../assets/biasguard.png" alt="BiasGuard AI" class="w-full rounded-2xl shadow-xl object-cover fallback-img" onerror="this.outerHTML='<div class=\'placeholder-img w-full rounded-2xl shadow-xl overflow-hidden\' style=\'min-height: 400px\'><i class=\'fas fa-brain text-6xl\'></i></div>'">
                     </div>
-                    
                     <!-- Achievement Highlight -->
                     <div class="reveal p-6 rounded-2xl border" data-reveal="up" style="background: rgba(234, 179, 8, 0.05); border-color: rgba(234, 179, 8, 0.2);">
                         <div class="flex items-center gap-4">
                             <div class="text-4xl text-yellow-500"><i class="fas fa-trophy"></i></div>
                             <div>
                                 <h3 class="font-bold text-lg text-yellow-600 dark:text-yellow-500">Google Solution Challenge 2026</h3>
-                                <p class="text-sm font-medium text-yellow-700 dark:text-yellow-600">Top 106 Teams Globally</p>
+                                <p class="text-sm font-medium text-yellow-700 dark:text-yellow-600">Top 120 Teams Globally</p>
                             </div>
                         </div>
                     </div>
-
                     <!-- Overview -->
                     <div class="reveal" data-reveal="up">
                         <h2 class="text-3xl font-bold mb-4" style="color: var(--text-primary)">Project Overview</h2>
                         <p class="text-lg leading-relaxed mb-6" style="color: var(--text-secondary)">
-                            BiasGuard AI is an advanced tool designed to detect and mitigate bias in machine learning models and datasets. Built for the Google Solution Challenge 2026, this project earned a spot among the Top 106 teams globally. It helps developers and researchers ensure fairness and equity in AI systems.
+                            BiasGuard AI is an advanced tool designed to detect and mitigate bias in machine learning models and datasets. Built for the Google Solution Challenge 2026, this project earned a spot among the Top 120 teams globally. It helps developers and researchers ensure fairness and equity in AI systems.
                         </p>
                     </div>
-
                     <!-- Key Features Grid -->
                     <div class="reveal" data-reveal="up">
                         <h2 class="text-3xl font-bold mb-6" style="color: var(--text-primary)">Key Features</h2>
@@ -155,10 +140,8 @@
                         </div>
                     </div>
                 </div>
-
                 <!-- Sidebar -->
                 <div class="lg:col-span-1 space-y-8">
-                    
                     <!-- Info Card -->
                     <div class="card-hover reveal" data-reveal="left">
                         <h3 class="font-bold text-xl mb-6 border-b pb-4" style="color: var(--text-primary); border-color: var(--border-color)">Project Details</h3>
@@ -177,7 +160,6 @@
                             </li>
                         </ul>
                     </div>
-
                     <!-- Tech Stack Card -->
                     <div class="card-hover reveal" data-reveal="left" data-delay="100">
                         <h3 class="font-bold text-xl mb-4 border-b pb-4" style="color: var(--text-primary); border-color: var(--border-color)">Tech Stack</h3>
@@ -187,7 +169,6 @@
                             <span class="px-3 py-1.5 text-sm font-medium rounded-lg" style="background: var(--bg-tertiary); color: var(--text-secondary)">AI/ML</span>
                         </div>
                     </div>
-
                     <!-- Action Buttons -->
                     <div class="flex flex-col gap-4 reveal" data-reveal="left" data-delay="200">
                         <a href="https://biasguard-ai.onrender.com/" target="_blank" class="gradient-btn text-center"><i class="fas fa-external-link-alt mr-2"></i>Live Demo</a>
@@ -196,10 +177,8 @@
                     </div>
                 </div>
             </div>
-
         </div>
     </section>
-
     <!-- Footer -->
     <footer class="py-12 mt-12" style="background: var(--bg-tertiary); border-top: 1px solid var(--border-color)">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -212,14 +191,11 @@
             </div>
         </div>
     </footer>
-
     <!-- Back to Top -->
     <button id="back-to-top" class="back-to-top" aria-label="Back to top">
         <i class="fas fa-arrow-up"></i>
     </button>
-
     <!-- Scripts -->
-    <script src="../js/darkmode.js"></script>
-    <script src="../js/main.js"></script>
+    <script src="../js/app.js"></script>
 </body>
 </html>

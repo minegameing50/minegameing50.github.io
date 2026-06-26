@@ -8,14 +8,12 @@
   <meta name="author" content="Atul Dhanotiya">
   <meta name="keywords" content="Atul Dhanotiya, portfolio, web developer, AI, BCA, projects, skills">
   <link rel="icon" type="image/png" href="assets/logo.png">
-
   <!-- Open Graph -->
   <meta property="og:title" content="Atul Dhanotiya | Portfolio">
   <meta property="og:description" content="Building modern web applications, AI-powered solutions and real-world projects that make a difference.">
-  <meta property="og:image" content="assets/profile.jpg">
+  <meta property="og:image" content="https://minegameing50.github.io/portfolio/assets/profile.jpg">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="#">
-
+  <meta property="og:url" content="https://minegameing50.github.io/portfolio">
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -28,23 +26,16 @@
       }
     }
   </script>
-
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
   <!-- Custom Stylesheets -->
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/animations.css">
-  <link rel="stylesheet" href="css/darkmode.css">
+  <link rel="stylesheet" href="css/main.css">
 </head>
 <body class="font-inter">
-
   <!-- SCROLL PROGRESS BAR -->
   <div id="scroll-progress" class="scroll-progress"></div>
-
   <!-- LOADING SCREEN -->
   <div id="loading-screen" class="loading-screen">
     <img src="assets/logo.png" alt="AD" class="loading-logo" width="80">
@@ -54,16 +45,13 @@
       <div class="loading-bar"></div>
     </div>
   </div>
-
   <!-- NAVBAR -->
   <nav id="navbar" class="nav-glass">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16">
-
       <!-- Logo -->
       <a href="#home">
         <img src="assets/logo.png" alt="AD" class="h-8 w-auto">
       </a>
-
       <!-- Desktop Navigation -->
       <div class="desktop-nav hidden md:flex gap-1">
         <a class="nav-link px-3 py-2 rounded-lg text-sm font-medium transition" href="#home" style="color: var(--text-secondary)">Home</a>
@@ -74,19 +62,16 @@
         <a class="nav-link px-3 py-2 rounded-lg text-sm font-medium transition" href="#achievements" style="color: var(--text-secondary)">Achievements</a>
         <a class="nav-link px-3 py-2 rounded-lg text-sm font-medium transition" href="#contact" style="color: var(--text-secondary)">Contact</a>
       </div>
-
       <!-- Right Actions -->
       <div class="flex items-center gap-3">
         <!-- Theme Toggle -->
-        <button id="theme-toggle" class="p-2 rounded-lg" title="Toggle theme">
+        <button id="theme-toggle" class="p-2 rounded-lg" title="Toggle theme" aria-label="Toggle dark mode">
           <i class="fas fa-moon"></i>
         </button>
-
         <!-- Resume Button (desktop) -->
-        <a href="#" onclick="alert('Resume will be available soon!'); return false;" class="gradient-btn text-sm py-2 px-4 hidden sm:inline-flex">
+        <a href="assets/resume/resume.pdf" target="_blank" class="gradient-btn text-sm py-2 px-4 hidden sm:inline-flex">
           Resume <i class="fas fa-download ml-1"></i>
         </a>
-
         <!-- Hamburger (mobile) -->
         <button class="hamburger md:hidden" aria-label="Menu">
           <span></span>
@@ -96,7 +81,6 @@
       </div>
     </div>
   </nav>
-
   <!-- MOBILE MENU -->
   <div id="mobile-menu" class="mobile-menu">
     <a class="nav-link text-xl py-3" href="#home" style="color: var(--text-secondary)">Home</a>
@@ -106,17 +90,15 @@
     <a class="nav-link text-xl py-3" href="#projects" style="color: var(--text-secondary)">Projects</a>
     <a class="nav-link text-xl py-3" href="#achievements" style="color: var(--text-secondary)">Achievements</a>
     <a class="nav-link text-xl py-3" href="#contact" style="color: var(--text-secondary)">Contact</a>
-
     <div class="flex items-center gap-4 mt-6">
-      <button id="theme-toggle-mobile" class="p-2 rounded-lg" title="Toggle theme">
+      <button id="theme-toggle-mobile" class="p-2 rounded-lg" title="Toggle theme" aria-label="Toggle dark mode">
         <i class="fas fa-moon"></i>
       </button>
-      <a href="#" onclick="alert('Resume will be available soon!'); return false;" class="gradient-btn text-sm py-2 px-4">
+      <a href="assets/resume/resume.pdf" target="_blank" class="gradient-btn text-sm py-2 px-4">
         Resume <i class="fas fa-download ml-1"></i>
       </a>
     </div>
   </div>
-
   <!-- ======================== -->
   <!-- HERO SECTION -->
   <!-- ======================== -->
@@ -126,14 +108,11 @@
     <div class="floating-shape shape-2"></div>
     <div class="floating-shape shape-3"></div>
     <div class="floating-shape shape-4"></div>
-
     <!-- Hero Glow -->
     <div class="hero-glow"></div>
     <div class="hero-glow-2"></div>
-
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-
         <!-- Left Content -->
         <div class="order-2 lg:order-1">
           <p class="text-lg mb-2" style="color: var(--text-secondary)">Hi, I'm 👋</p>
@@ -146,7 +125,6 @@
           <p class="text-base lg:text-lg mb-8 leading-relaxed max-w-xl" style="color: var(--text-secondary)">
             Building modern web applications, AI-powered solutions and real-world projects that make a difference.
           </p>
-
           <!-- CTA Buttons -->
           <div class="flex flex-wrap gap-4">
             <a href="#projects" class="gradient-btn btn-glow">
@@ -156,24 +134,22 @@
               <i class="fas fa-envelope mr-2"></i>Contact Me
             </a>
           </div>
-
           <!-- Social Links -->
           <div class="flex gap-4 mt-8">
-            <a href="https://github.com/minegameing50" target="_blank" class="social-link w-10 h-10 rounded-full flex items-center justify-center" title="GitHub" style="border: 1px solid var(--border-color); color: var(--text-secondary)">
+            <a href="https://github.com/minegameing50" target="_blank" class="social-link w-10 h-10 rounded-full flex items-center justify-center" title="GitHub" aria-label="GitHub Profile" style="border: 1px solid var(--border-color); color: var(--text-secondary)">
               <i class="fab fa-github text-xl"></i>
             </a>
-            <a href="https://www.linkedin.com/in/atul-dhanotiya-648481356" target="_blank" class="social-link w-10 h-10 rounded-full flex items-center justify-center" title="LinkedIn" style="border: 1px solid var(--border-color); color: var(--text-secondary)">
+            <a href="https://www.linkedin.com/in/atul-dhanotiya-648481356" target="_blank" class="social-link w-10 h-10 rounded-full flex items-center justify-center" title="LinkedIn" aria-label="LinkedIn Profile" style="border: 1px solid var(--border-color); color: var(--text-secondary)">
               <i class="fab fa-linkedin text-xl"></i>
             </a>
-            <a href="https://www.instagram.com/atul_dhanotiya_4422" target="_blank" class="social-link w-10 h-10 rounded-full flex items-center justify-center" title="Instagram" style="border: 1px solid var(--border-color); color: var(--text-secondary)">
+            <a href="https://www.instagram.com/atul_dhanotiya_4422" target="_blank" class="social-link w-10 h-10 rounded-full flex items-center justify-center" title="Instagram" aria-label="Instagram Profile" style="border: 1px solid var(--border-color); color: var(--text-secondary)">
               <i class="fab fa-instagram text-xl"></i>
             </a>
-            <a href="mailto:atuldhanotiya7@gmail.com" class="social-link w-10 h-10 rounded-full flex items-center justify-center" title="Email" style="border: 1px solid var(--border-color); color: var(--text-secondary)">
+            <a href="mailto:atuldhanotiya7@gmail.com" class="social-link w-10 h-10 rounded-full flex items-center justify-center" title="Email" aria-label="Email Me" style="border: 1px solid var(--border-color); color: var(--text-secondary)">
               <i class="fas fa-envelope text-xl"></i>
             </a>
           </div>
         </div>
-
         <!-- Right Content — Hero Image -->
         <div class="order-1 lg:order-2">
           <div class="hero-image-container">
@@ -184,13 +160,11 @@
       </div>
     </div>
   </section>
-
   <!-- ======================== -->
   <!-- ABOUT SECTION -->
   <!-- ======================== -->
   <section id="about" class="section-padding" style="background: var(--bg-secondary)">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
       <!-- Section Title -->
       <h2 class="text-3xl sm:text-4xl font-bold text-center mb-4 reveal" data-reveal="up">
         <span class="gradient-text">About Me</span>
@@ -198,7 +172,6 @@
       <p class="text-center mb-12 max-w-2xl mx-auto reveal" data-reveal="up" data-delay="100" style="color: var(--text-secondary)">
         Get to know me better
       </p>
-
       <!-- Info Cards -->
       <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
         <!-- Education -->
@@ -225,7 +198,6 @@
           <span class="status-badge">Open for Internships</span>
         </div>
       </div>
-
       <!-- Description -->
       <div class="max-w-3xl mx-auto reveal" data-reveal="up" data-delay="200">
         <p class="text-base leading-relaxed mb-4" style="color: var(--text-secondary)">
@@ -237,13 +209,11 @@
       </div>
     </div>
   </section>
-
   <!-- ======================== -->
   <!-- EXPERIENCE SECTION -->
   <!-- ======================== -->
   <section id="experience" class="section-padding">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
       <!-- Section Title -->
       <h2 class="text-3xl sm:text-4xl font-bold text-center mb-4 reveal" data-reveal="up">
         <span class="gradient-text">Experience</span>
@@ -251,7 +221,6 @@
       <p class="text-center mb-12 max-w-2xl mx-auto reveal" data-reveal="up" data-delay="100" style="color: var(--text-secondary)">
         My professional journey
       </p>
-
       <!-- Timeline -->
       <div class="timeline max-w-3xl mx-auto reveal" data-reveal="left">
         <div class="timeline-item">
@@ -289,13 +258,11 @@
       </div>
     </div>
   </section>
-
   <!-- ======================== -->
   <!-- HACKATHONS SECTION -->
   <!-- ======================== -->
   <section id="hackathons" class="section-padding" style="background: var(--bg-secondary)">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
       <!-- Section Title -->
       <h2 class="text-3xl sm:text-4xl font-bold text-center mb-4 reveal" data-reveal="up">
         <span class="gradient-text">Hackathons</span>
@@ -303,10 +270,8 @@
       <p class="text-center mb-12 max-w-2xl mx-auto reveal" data-reveal="up" data-delay="100" style="color: var(--text-secondary)">
         Competing and building
       </p>
-
       <!-- Hackathon Cards -->
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-
         <!-- Card 1 — Google Solution Challenge -->
         <div class="card-hover reveal" data-reveal="up">
           <div class="flex items-center gap-3 mb-4">
@@ -326,7 +291,6 @@
             <a href="https://biasguard-ai.onrender.com/" target="_blank" class="text-sm font-medium" style="color: var(--primary)">View Project →</a>
           </div>
         </div>
-
         <!-- Card 2 — Coming Soon -->
         <div class="card-hover reveal" data-reveal="up" data-delay="200" style="border-style: dashed; opacity: 0.6">
           <div class="flex items-center justify-center h-full min-h-[200px] flex-col gap-3">
@@ -337,13 +301,11 @@
       </div>
     </div>
   </section>
-
   <!-- ======================== -->
   <!-- SKILLS SECTION -->
   <!-- ======================== -->
   <section id="skills" class="section-padding">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
       <!-- Section Title -->
       <h2 class="text-3xl sm:text-4xl font-bold text-center mb-4 reveal" data-reveal="up">
         <span class="gradient-text">Skills &amp; Technologies</span>
@@ -351,10 +313,8 @@
       <p class="text-center mb-12 max-w-2xl mx-auto reveal" data-reveal="up" data-delay="100" style="color: var(--text-secondary)">
         Tools I work with
       </p>
-
       <!-- Skills Grid -->
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
-
         <!-- Programming -->
         <div class="skill-card card-hover reveal" data-reveal="up" data-delay="100">
           <div class="skill-icon"><i class="fas fa-code"></i></div>
@@ -365,7 +325,6 @@
             <span class="px-3 py-1.5 rounded-lg text-sm font-medium" style="background: var(--bg-tertiary); color: var(--text-secondary)">TypeScript</span>
           </div>
         </div>
-
         <!-- Frontend -->
         <div class="skill-card card-hover reveal" data-reveal="up" data-delay="200">
           <div class="skill-icon"><i class="fas fa-palette"></i></div>
@@ -376,7 +335,6 @@
             <span class="px-3 py-1.5 rounded-lg text-sm font-medium" style="background: var(--bg-tertiary); color: var(--text-secondary)">Tailwind CSS</span>
           </div>
         </div>
-
         <!-- Backend -->
         <div class="skill-card card-hover reveal" data-reveal="up" data-delay="300">
           <div class="skill-icon"><i class="fas fa-server"></i></div>
@@ -385,7 +343,6 @@
             <span class="px-3 py-1.5 rounded-lg text-sm font-medium" style="background: var(--bg-tertiary); color: var(--text-secondary)">Firebase</span>
           </div>
         </div>
-
         <!-- Tools -->
         <div class="skill-card card-hover reveal" data-reveal="up" data-delay="400">
           <div class="skill-icon"><i class="fas fa-tools"></i></div>
@@ -399,13 +356,11 @@
       </div>
     </div>
   </section>
-
   <!-- ======================== -->
   <!-- FEATURED PROJECTS SECTION -->
   <!-- ======================== -->
   <section id="projects" class="section-padding" style="background: var(--bg-secondary)">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
       <!-- Section Title -->
       <h2 class="text-3xl sm:text-4xl font-bold text-center mb-4 reveal" data-reveal="up">
         <span class="gradient-text">Featured Projects</span>
@@ -413,16 +368,12 @@
       <p class="text-center mb-12 max-w-2xl mx-auto reveal" data-reveal="up" data-delay="100" style="color: var(--text-secondary)">
         What I've built
       </p>
-
       <!-- Projects Grid -->
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-
         <!-- Project 1 — SmartAttend -->
         <div class="project-card card-hover reveal" data-reveal="up" data-delay="100" data-category="web">
           <a href="pages/smartattend.html" aria-label="SmartAttend Project">
-          <div class="placeholder-img rounded-t-lg">
-            <i class="fas fa-image"></i>
-          </div>
+          <img src="assets/smartattend.png" alt="SmartAttend" class="w-full h-48 object-cover rounded-t-lg fallback-img" onerror="this.outerHTML='<div class=\'placeholder-img rounded-t-lg\'><i class=\'fas fa-image\'></i></div>'">
           </a>
           <div class="p-6">
             <a href="pages/smartattend.html" aria-label="SmartAttend Project">
@@ -449,13 +400,10 @@
             </div>
           </div>
         </div>
-
         <!-- Project 2 — BiasGuard AI -->
         <div class="project-card card-hover reveal" data-reveal="up" data-delay="200" data-category="ai">
           <a href="pages/biasguard.html" aria-label="BiasGuard AI Project">
-          <div class="placeholder-img rounded-t-lg">
-            <i class="fas fa-image"></i>
-          </div>
+          <img src="assets/biasguard.png" alt="BiasGuard AI" class="w-full h-48 object-cover rounded-t-lg fallback-img" onerror="this.outerHTML='<div class=\'placeholder-img rounded-t-lg\'><i class=\'fas fa-image\'></i></div>'">
           </a>
           <div class="p-6">
             <a href="pages/biasguard.html" aria-label="BiasGuard AI Project">
@@ -482,13 +430,10 @@
             </div>
           </div>
         </div>
-
         <!-- Project 3 — PulseChat -->
         <div class="project-card card-hover reveal" data-reveal="up" data-delay="300" data-category="web">
           <a href="pages/pulsechat.html" aria-label="PulseChat Project">
-          <div class="placeholder-img rounded-t-lg">
-            <i class="fas fa-image"></i>
-          </div>
+          <img src="assets/pulsechat.png" alt="PulseChat" class="w-full h-48 object-cover rounded-t-lg fallback-img" onerror="this.outerHTML='<div class=\'placeholder-img rounded-t-lg\'><i class=\'fas fa-image\'></i></div>'">
           </a>
           <div class="p-6">
             <a href="pages/pulsechat.html" aria-label="PulseChat Project">
@@ -516,13 +461,10 @@
             </div>
           </div>
         </div>
-
         <!-- Project 4 — GestureClip -->
         <div class="project-card card-hover reveal" data-reveal="up" data-delay="400" data-category="ai">
           <a href="pages/gestureclip.html" aria-label="GestureClip Project">
-            <div class="placeholder-img rounded-t-lg">
-              <i class="fas fa-image"></i>
-            </div>
+            <img src="assets/gestureclip.png" alt="GestureClip" class="w-full h-48 object-cover rounded-t-lg fallback-img" onerror="this.outerHTML='<div class=\'placeholder-img rounded-t-lg\'><i class=\'fas fa-image\'></i></div>'">
           </a>
           <div class="p-6">
             <a href="pages/gestureclip.html" aria-label="GestureClip Project">
@@ -550,7 +492,6 @@
           </div>
         </div>
       </div>
-
       <!-- View All Projects -->
       <div class="text-center mt-10 reveal" data-reveal="up">
         <a href="projects.html" class="gradient-btn">
@@ -559,13 +500,11 @@
       </div>
     </div>
   </section>
-
   <!-- ======================== -->
   <!-- GITHUB JOURNEY SECTION -->
   <!-- ======================== -->
   <section id="github-journey" class="section-padding">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
       <!-- Section Title -->
       <h2 class="text-3xl sm:text-4xl font-bold text-center mb-4 reveal" data-reveal="up">
         <span class="gradient-text">GitHub Journey</span>
@@ -573,7 +512,6 @@
       <p class="text-center mb-12 max-w-2xl mx-auto reveal" data-reveal="up" data-delay="100" style="color: var(--text-secondary)">
         My development timeline
       </p>
-
       <!-- Timeline -->
       <div class="timeline max-w-3xl mx-auto">
         <!-- Item 1 -->
@@ -609,7 +547,7 @@
           </div>
         </div>
         <!-- Item 5 -->
-        <div class="timeline-item reveal" data-reveal="left" data-delay="600">
+        <div class="timeline-item reveal" data-reveal="left" data-delay="500">
           <div class="timeline-date">2026</div>
           <div class="card-hover" style="margin-top: 0.5rem">
             <h3 class="text-lg font-bold" style="color: var(--text-primary)">Google Solution Challenge</h3>
@@ -617,7 +555,7 @@
           </div>
         </div>
         <!-- Item 6 -->
-        <div class="timeline-item reveal" data-reveal="left" data-delay="500">
+        <div class="timeline-item reveal" data-reveal="left" data-delay="600">
           <div class="timeline-date">2026</div>
           <div class="card-hover" style="margin-top: 0.5rem">
             <h3 class="text-lg font-bold" style="color: var(--text-primary)">Internshala Student Partner</h3>
@@ -625,7 +563,6 @@
           </div>
         </div>
       </div>
-
       <!-- Stats Row -->
       <div class="flex flex-wrap justify-center gap-8 mt-12 reveal" data-reveal="up">
         <div class="text-center">
@@ -647,7 +584,6 @@
           <p class="text-sm" style="color: var(--text-secondary)">Top Teams (GSC)</p>
         </div>
       </div>
-
       <!-- Visit GitHub -->
       <div class="text-center mt-8 reveal" data-reveal="up">
         <a href="https://github.com/minegameing50" target="_blank" class="gradient-btn">
@@ -656,13 +592,11 @@
       </div>
     </div>
   </section>
-
   <!-- ======================== -->
   <!-- ACHIEVEMENTS SECTION -->
   <!-- ======================== -->
   <section id="achievements" class="section-padding" style="background: var(--bg-secondary)">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
       <!-- Section Title -->
       <h2 class="text-3xl sm:text-4xl font-bold text-center mb-4 reveal" data-reveal="up">
         <span class="gradient-text">Achievements</span>
@@ -670,7 +604,6 @@
       <p class="text-center mb-12 max-w-2xl mx-auto reveal" data-reveal="up" data-delay="100" style="color: var(--text-secondary)">
         Milestones &amp; recognition
       </p>
-
       <!-- Achievements Grid -->
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
         <!-- 1 -->
@@ -706,13 +639,11 @@
       </div>
     </div>
   </section>
-
   <!-- ======================== -->
   <!-- CERTIFICATES SECTION -->
   <!-- ======================== -->
   <section id="certificates" class="section-padding">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
       <!-- Section Title -->
       <h2 class="text-3xl sm:text-4xl font-bold text-center mb-4 reveal" data-reveal="up">
         <span class="gradient-text">Certificates</span>
@@ -720,61 +651,43 @@
       <p class="text-center mb-12 max-w-2xl mx-auto reveal" data-reveal="up" data-delay="100" style="color: var(--text-secondary)">
         Learning &amp; development
       </p>
-
       <!-- Certificate Cards -->
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-4xl mx-auto">
         <!-- Cert 1 -->
         <div class="certificate-card card-hover reveal" data-reveal="up" data-delay="100">
-          <div class="placeholder-img" style="min-height: 160px; border-radius: var(--radius) var(--radius) 0 0;">
-            <i class="fas fa-certificate"></i>
-          </div>
+          <img src="assets/certificates/microsoft-copilot.png" alt="Introduction to Microsoft 365 Copilot" class="w-full h-40 object-cover fallback-img" onerror="this.outerHTML='<div class=\'placeholder-img\' style=\'min-height: 160px; border-radius: var(--radius) var(--radius) 0 0;\'><i class=\'fas fa-certificate\'></i></div>'">
           <div class="p-4">
-            <h3 class="font-bold mb-1" style="color: var(--text-primary)">Internshala Training Certificate</h3>
-            <p class="text-sm mb-1" style="color: var(--text-secondary)">Internshala</p>
-            <p class="text-xs mb-3" style="color: var(--text-tertiary)">2026</p>
-            <button class="text-sm font-medium" style="color: var(--primary)" onclick="alert('Certificate will be available soon!')">
-              <i class="fas fa-external-link-alt mr-1"></i>View Certificate
-            </button>
+            <h3 class="font-bold mb-1" style="color: var(--text-primary)">Introduction to Microsoft 365 Copilot</h3>
+            <p class="text-sm mb-1" style="color: var(--text-secondary)">Microsoft</p>
+            <p class="text-xs mb-3" style="color: var(--text-tertiary)">Issued Apr 2026</p>
           </div>
         </div>
         <!-- Cert 2 -->
         <div class="certificate-card card-hover reveal" data-reveal="up" data-delay="200">
-          <div class="placeholder-img" style="min-height: 160px; border-radius: var(--radius) var(--radius) 0 0;">
-            <i class="fas fa-certificate"></i>
-          </div>
+          <img src="assets/certificates/internshala-isp.png" alt="ISP 58 First Trainings Contest Webinar" class="w-full h-40 object-cover fallback-img" onerror="this.outerHTML='<div class=\'placeholder-img\' style=\'min-height: 160px; border-radius: var(--radius) var(--radius) 0 0;\'><i class=\'fas fa-certificate\'></i></div>'">
           <div class="p-4">
-            <h3 class="font-bold mb-1" style="color: var(--text-primary)">Programming Fundamentals</h3>
-            <p class="text-sm mb-1" style="color: var(--text-secondary)">GUVI</p>
-            <p class="text-xs mb-3" style="color: var(--text-tertiary)">2025</p>
-            <button class="text-sm font-medium" style="color: var(--primary)" onclick="alert('Certificate will be available soon!')">
-              <i class="fas fa-external-link-alt mr-1"></i>View Certificate
-            </button>
+            <h3 class="font-bold mb-1" style="color: var(--text-primary)">ISP 58 First Trainings Contest Webinar</h3>
+            <p class="text-sm mb-1" style="color: var(--text-secondary)">Internshala</p>
+            <p class="text-xs mb-3" style="color: var(--text-tertiary)">Issued Jun 2026</p>
           </div>
         </div>
         <!-- Cert 3 -->
         <div class="certificate-card card-hover reveal" data-reveal="up" data-delay="300">
-          <div class="placeholder-img" style="min-height: 160px; border-radius: var(--radius) var(--radius) 0 0;">
-            <i class="fas fa-certificate"></i>
-          </div>
+          <img src="assets/certificates/build-with-ai.png" alt="Build with AI – Solution Challenge" class="w-full h-40 object-cover fallback-img" onerror="this.outerHTML='<div class=\'placeholder-img\' style=\'min-height: 160px; border-radius: var(--radius) var(--radius) 0 0;\'><i class=\'fas fa-certificate\'></i></div>'">
           <div class="p-4">
-            <h3 class="font-bold mb-1" style="color: var(--text-primary)">Web Development Workshop</h3>
-            <p class="text-sm mb-1" style="color: var(--text-secondary)">Workshop</p>
-            <p class="text-xs mb-3" style="color: var(--text-tertiary)">2025</p>
-            <button class="text-sm font-medium" style="color: var(--primary)" onclick="alert('Certificate will be available soon!')">
-              <i class="fas fa-external-link-alt mr-1"></i>View Certificate
-            </button>
+            <h3 class="font-bold mb-1" style="color: var(--text-primary)">Build with AI – Solution Challenge</h3>
+            <p class="text-sm mb-1" style="color: var(--text-secondary)">Hack2skill</p>
+            <p class="text-xs mb-3" style="color: var(--text-tertiary)">Issued Apr 2026</p>
           </div>
         </div>
       </div>
     </div>
   </section>
-
   <!-- ======================== -->
   <!-- CONTACT SECTION -->
   <!-- ======================== -->
   <section id="contact" class="section-padding" style="background: var(--bg-secondary)">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
       <!-- Section Title -->
       <h2 class="text-3xl sm:text-4xl font-bold text-center mb-4 reveal" data-reveal="up">
         <span class="gradient-text">Get In Touch</span>
@@ -782,98 +695,65 @@
       <p class="text-center mb-12 max-w-2xl mx-auto reveal" data-reveal="up" data-delay="100" style="color: var(--text-secondary)">
         Let's work together
       </p>
-
       <!-- Contact Grid -->
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-5xl mx-auto">
-
-        <!-- Left — Contact Info -->
-        <div class="space-y-6 reveal" data-reveal="left">
-          <p class="text-lg" style="color: var(--text-secondary)">
-            I'm always open to discussing new projects, opportunities, and collaborations. Feel free to reach out!
-          </p>
-
-          <!-- Contact Cards -->
-          <div class="flex items-center gap-4 card-hover">
+      <div class="max-w-2xl mx-auto space-y-6 reveal" data-reveal="up">
+        <p class="text-lg text-center mb-8" style="color: var(--text-secondary)">
+          I'm always open to discussing new projects, opportunities, and collaborations. Feel free to reach out!
+        </p>
+        <!-- Contact Cards -->
+        <div class="flex flex-col sm:flex-row gap-6 justify-center">
+          <div class="flex items-center gap-4 card-hover flex-1">
             <div class="skill-icon"><i class="fas fa-envelope"></i></div>
             <div>
               <h4 class="font-semibold" style="color: var(--text-primary)">Email</h4>
               <a href="mailto:atuldhanotiya7@gmail.com" class="text-sm" style="color: var(--text-secondary)">atuldhanotiya7@gmail.com</a>
             </div>
           </div>
-
-          <div class="flex items-center gap-4 card-hover">
+          <div class="flex items-center gap-4 card-hover flex-1">
             <div class="skill-icon"><i class="fas fa-phone"></i></div>
             <div>
               <h4 class="font-semibold" style="color: var(--text-primary)">Phone</h4>
               <a href="tel:+919669812090" class="text-sm" style="color: var(--text-secondary)">+91 9669812090</a>
             </div>
           </div>
-
-          <div class="flex items-center gap-4 card-hover">
-            <div class="skill-icon"><i class="fas fa-map-marker-alt"></i></div>
-            <div>
-              <h4 class="font-semibold" style="color: var(--text-primary)">Location</h4>
-              <p class="text-sm" style="color: var(--text-secondary)">Suwasra, Madhya Pradesh</p>
-            </div>
-          </div>
-
-          <!-- Social Buttons -->
-          <div class="flex gap-3 mt-6">
-            <a href="https://github.com/minegameing50" target="_blank" class="social-link w-11 h-11 rounded-full flex items-center justify-center" title="GitHub" style="border: 1px solid var(--border-color); color: var(--text-secondary)">
-              <i class="fab fa-github text-xl"></i>
-            </a>
-            <a href="https://www.linkedin.com/in/atul-dhanotiya-648481356" target="_blank" class="social-link w-11 h-11 rounded-full flex items-center justify-center" title="LinkedIn" style="border: 1px solid var(--border-color); color: var(--text-secondary)">
-              <i class="fab fa-linkedin text-xl"></i>
-            </a>
-            <a href="https://www.instagram.com/atul_dhanotiya_4422" target="_blank" class="social-link w-11 h-11 rounded-full flex items-center justify-center" title="Instagram" style="border: 1px solid var(--border-color); color: var(--text-secondary)">
-              <i class="fab fa-instagram text-xl"></i>
-            </a>
-            <a href="mailto:atuldhanotiya7@gmail.com" class="social-link w-11 h-11 rounded-full flex items-center justify-center" title="Email" style="border: 1px solid var(--border-color); color: var(--text-secondary)">
-              <i class="fas fa-envelope text-xl"></i>
-            </a>
+        </div>
+        <div class="flex items-center justify-center gap-4 card-hover mt-6">
+          <div class="skill-icon"><i class="fas fa-map-marker-alt"></i></div>
+          <div>
+            <h4 class="font-semibold" style="color: var(--text-primary)">Location</h4>
+            <p class="text-sm" style="color: var(--text-secondary)">Suwasra, Madhya Pradesh</p>
           </div>
         </div>
-
-        <!-- Right — Contact Form -->
-        <form id="contact-form" class="contact-form space-y-4 reveal" data-reveal="right">
-          <div>
-            <label class="block text-sm font-medium mb-1" style="color: var(--text-primary)">Name</label>
-            <input type="text" placeholder="Your Name" required>
-          </div>
-          <div>
-            <label class="block text-sm font-medium mb-1" style="color: var(--text-primary)">Email</label>
-            <input type="email" placeholder="your@email.com" required>
-          </div>
-          <div>
-            <label class="block text-sm font-medium mb-1" style="color: var(--text-primary)">Message</label>
-            <textarea placeholder="Your message..." required></textarea>
-          </div>
-          <button type="submit" class="gradient-btn btn-glow w-full">
-            <i class="fas fa-paper-plane mr-2"></i>Send Message
-          </button>
-          <div id="form-success" class="hidden text-center p-3 rounded-lg" style="background: rgba(34, 197, 94, 0.1); color: #16a34a;">
-            <i class="fas fa-check-circle mr-2"></i>Thank you! Message sent successfully.
-          </div>
-        </form>
+        <!-- Social Buttons -->
+        <div class="flex gap-4 mt-8 justify-center">
+          <a href="https://github.com/minegameing50" target="_blank" class="social-link w-12 h-12 rounded-full flex items-center justify-center text-xl" title="GitHub" aria-label="GitHub Profile" style="border: 1px solid var(--border-color); color: var(--text-secondary)">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/atul-dhanotiya-648481356" target="_blank" class="social-link w-12 h-12 rounded-full flex items-center justify-center text-xl" title="LinkedIn" aria-label="LinkedIn Profile" style="border: 1px solid var(--border-color); color: var(--text-secondary)">
+            <i class="fab fa-linkedin"></i>
+          </a>
+          <a href="https://www.instagram.com/atul_dhanotiya_4422" target="_blank" class="social-link w-12 h-12 rounded-full flex items-center justify-center text-xl" title="Instagram" aria-label="Instagram Profile" style="border: 1px solid var(--border-color); color: var(--text-secondary)">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="mailto:atuldhanotiya7@gmail.com" class="social-link w-12 h-12 rounded-full flex items-center justify-center text-xl" title="Email" aria-label="Email Me" style="border: 1px solid var(--border-color); color: var(--text-secondary)">
+            <i class="fas fa-envelope"></i>
+          </a>
+        </div>
       </div>
     </div>
   </section>
-
   <!-- ======================== -->
   <!-- FOOTER -->
   <!-- ======================== -->
   <footer class="py-12" style="background: var(--bg-tertiary); border-top: 1px solid var(--border-color)">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
       <!-- Footer Grid -->
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-
         <!-- Col 1 — Brand -->
         <div>
           <img src="assets/logo.png" alt="AD" class="h-8 w-auto mb-3">
           <p class="text-sm" style="color: var(--text-secondary)">Building modern web applications and AI-powered solutions.</p>
         </div>
-
         <!-- Col 2 — Quick Links -->
         <div>
           <h4 class="font-semibold mb-3" style="color: var(--text-primary)">Quick Links</h4>
@@ -884,7 +764,6 @@
             <li><a href="#contact" class="text-sm transition hover:underline" style="color: var(--text-secondary)">Contact</a></li>
           </ul>
         </div>
-
         <!-- Col 3 — Connect -->
         <div>
           <h4 class="font-semibold mb-3" style="color: var(--text-primary)">Connect</h4>
@@ -912,10 +791,8 @@
           </ul>
         </div>
       </div>
-
       <!-- Divider -->
       <hr style="border-color: var(--border-color)" class="my-6">
-
       <!-- Bottom Row -->
       <div class="flex flex-col sm:flex-row justify-between items-center gap-2">
         <p class="text-sm" style="color: var(--text-tertiary)">© 2026 Atul Dhanotiya. All rights reserved.</p>
@@ -923,15 +800,11 @@
       </div>
     </div>
   </footer>
-
   <!-- BACK TO TOP BUTTON -->
   <button id="back-to-top" class="back-to-top" aria-label="Back to top">
     <i class="fas fa-arrow-up"></i>
   </button>
-
   <!-- Scripts -->
-  <script src="js/darkmode.js"></script>
-  <script src="js/main.js"></script>
-  <script src="js/projects.js"></script>
+  <script src="js/app.js"></script>
 </body>
 </html>

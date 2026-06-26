@@ -5,7 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projects | Atul Dhanotiya</title>
     <meta name="description" content="Explore the portfolio projects of Atul Dhanotiya.">
-    
+    <meta name="author" content="Atul Dhanotiya">
+    <!-- Open Graph -->
+    <meta property="og:title" content="Projects | Atul Dhanotiya">
+    <meta property="og:description" content="Explore my portfolio of web applications, AI tools, and real-world projects.">
+    <meta property="og:image" content="https://minegameing50.github.io/portfolio/assets/profile.jpg">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://minegameing50.github.io/portfolio/projects.html">
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -18,24 +24,17 @@
       }
     }
     </script>
-    
     <!-- Fonts & Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/animations.css">
-    <link rel="stylesheet" href="css/darkmode.css">
-    
+    <link rel="stylesheet" href="css/main.css">
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="assets/logo.png">
 </head>
 <body class="antialiased">
-
     <!-- Scroll Progress Bar -->
     <div id="scroll-progress" class="scroll-progress"></div>
-
     <!-- Loading Screen -->
     <div id="loading-screen" class="loading-screen">
         <img src="assets/logo.png" alt="AD Logo" class="loading-logo" width="80">
@@ -45,13 +44,11 @@
             <div class="loading-bar"></div>
         </div>
     </div>
-
     <!-- Navbar -->
     <nav id="navbar" class="nav-glass">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex justify-between items-center">
             <!-- Logo -->
             <a href="index.html#home"><img src="assets/logo.png" alt="AD" class="h-8 w-auto"></a>
-            
             <!-- Desktop Nav -->
             <div class="desktop-nav hidden md:flex gap-1 items-center">
                 <a class="nav-link px-3 py-2 rounded-lg text-sm font-medium transition hover:bg-blue-50 dark:hover:bg-slate-800" style="color: var(--text-secondary)" href="index.html#home">Home</a>
@@ -62,13 +59,12 @@
                 <a class="nav-link px-3 py-2 rounded-lg text-sm font-medium transition hover:bg-blue-50 dark:hover:bg-slate-800" style="color: var(--text-secondary)" href="index.html#achievements">Achievements</a>
                 <a class="nav-link px-3 py-2 rounded-lg text-sm font-medium transition hover:bg-blue-50 dark:hover:bg-slate-800" style="color: var(--text-secondary)" href="index.html#contact">Contact</a>
             </div>
-            
             <!-- Right Actions -->
             <div class="flex items-center gap-3">
-                <button id="theme-toggle" class="p-2 rounded-lg" title="Toggle theme" style="color: var(--text-primary)">
+                <button id="theme-toggle" class="p-2 rounded-lg" title="Toggle theme" style="color: var(--text-primary)" aria-label="Toggle dark mode">
                     <i class="fas fa-moon"></i>
                 </button>
-                <a href="#" onclick="alert('Resume will be available soon!'); return false;" class="gradient-btn text-sm py-2 px-4 hidden sm:inline-flex items-center">
+                <a href="assets/resume/resume.pdf" target="_blank" class="gradient-btn text-sm py-2 px-4 hidden sm:inline-flex items-center">
                     Resume <i class="fas fa-download ml-1"></i>
                 </a>
                 <!-- Hamburger -->
@@ -78,7 +74,6 @@
             </div>
         </div>
     </nav>
-
     <!-- Mobile Menu -->
     <div id="mobile-menu" class="mobile-menu">
         <a href="index.html#home" class="text-xl font-medium" style="color: var(--text-primary)">Home</a>
@@ -88,9 +83,8 @@
         <a href="projects.html" class="text-xl font-medium" style="color: var(--primary)">Projects</a>
         <a href="index.html#achievements" class="text-xl font-medium" style="color: var(--text-primary)">Achievements</a>
         <a href="index.html#contact" class="text-xl font-medium" style="color: var(--text-primary)">Contact</a>
-        <a href="#" onclick="alert('Resume will be available soon!'); return false;" class="gradient-btn mt-4">Resume</a>
+        <a href="assets/resume/resume.pdf" target="_blank" class="gradient-btn mt-4">Resume</a>
     </div>
-
     <!-- Hero Section -->
     <section class="pt-32 pb-16 px-4" style="background: var(--bg-secondary)">
         <div class="max-w-4xl mx-auto text-center reveal" data-reveal="up">
@@ -98,26 +92,22 @@
             <p class="text-lg" style="color: var(--text-secondary)">Explore my work, side projects, and open source contributions.</p>
         </div>
     </section>
-
     <!-- Projects Grid Section -->
     <section class="pb-24 px-4 section-padding">
         <div class="max-w-7xl mx-auto">
-            
             <!-- Filters -->
             <div class="flex flex-wrap justify-center gap-3 mb-12 reveal" data-reveal="up">
-                <button class="filter-btn active px-4 py-2 rounded-full text-sm font-medium transition" data-filter="all" style="background: var(--primary); color: white;">All</button>
-                <button class="filter-btn px-4 py-2 rounded-full text-sm font-medium transition" data-filter="web" style="background: var(--bg-tertiary); color: var(--text-secondary);">Web</button>
-                <button class="filter-btn px-4 py-2 rounded-full text-sm font-medium transition" data-filter="ai" style="background: var(--bg-tertiary); color: var(--text-secondary);">AI/ML</button>
+                <button class="filter-btn active px-4 py-2 rounded-full text-sm font-medium transition" data-filter="all">All</button>
+                <button class="filter-btn px-4 py-2 rounded-full text-sm font-medium transition" data-filter="web">Web</button>
+                <button class="filter-btn px-4 py-2 rounded-full text-sm font-medium transition" data-filter="ai">AI/ML</button>
             </div>
-
             <!-- Grid -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8" id="projects-grid">
-                
                 <!-- Project 1: SmartAttend -->
                 <div class="project-card card-hover reveal" data-reveal="up" data-delay="100" data-category="web">
-                    <div class="placeholder-img rounded-t-lg">
-                        <i class="fas fa-id-badge"></i>
-                    </div>
+                    <a href="pages/smartattend.html" aria-label="SmartAttend Project">
+                    <img src="assets/smartattend.png" alt="SmartAttend" class="w-full h-48 object-cover rounded-t-lg fallback-img" onerror="this.outerHTML='<div class=\'placeholder-img rounded-t-lg\'><i class=\'fas fa-id-badge\'></i></div>'">
+                    </a>
                     <div class="p-6">
                         <h3 class="text-2xl font-bold mb-2" style="color: var(--text-primary)">SmartAttend</h3>
                         <p class="text-base mb-4" style="color: var(--text-secondary)">AI-powered smart attendance tracking system using facial recognition and real-time monitoring.</p>
@@ -133,12 +123,11 @@
                         </div>
                     </div>
                 </div>
-
                 <!-- Project 2: BiasGuard AI -->
                 <div class="project-card card-hover reveal" data-reveal="up" data-delay="200" data-category="ai">
-                    <div class="placeholder-img rounded-t-lg">
-                        <i class="fas fa-brain"></i>
-                    </div>
+                    <a href="pages/biasguard.html" aria-label="BiasGuard AI Project">
+                    <img src="assets/biasguard.png" alt="BiasGuard AI" class="w-full h-48 object-cover rounded-t-lg fallback-img" onerror="this.outerHTML='<div class=\'placeholder-img rounded-t-lg\'><i class=\'fas fa-brain\'></i></div>'">
+                    </a>
                     <div class="p-6">
                         <div class="flex justify-between items-start mb-2">
                             <h3 class="text-2xl font-bold" style="color: var(--text-primary)">BiasGuard AI</h3>
@@ -157,12 +146,11 @@
                         </div>
                     </div>
                 </div>
-
                 <!-- Project 3: PulseChat -->
                 <div class="project-card card-hover reveal" data-reveal="up" data-delay="300" data-category="web">
-                    <div class="placeholder-img rounded-t-lg">
-                        <i class="fas fa-comments"></i>
-                    </div>
+                    <a href="pages/pulsechat.html" aria-label="PulseChat Project">
+                    <img src="assets/pulsechat.png" alt="PulseChat" class="w-full h-48 object-cover rounded-t-lg fallback-img" onerror="this.outerHTML='<div class=\'placeholder-img rounded-t-lg\'><i class=\'fas fa-comments\'></i></div>'">
+                    </a>
                     <div class="p-6">
                         <h3 class="text-2xl font-bold mb-2" style="color: var(--text-primary)">PulseChat</h3>
                         <p class="text-base mb-4" style="color: var(--text-secondary)">Real-time chat application with modern UI, instant messaging, and seamless user experience.</p>
@@ -179,12 +167,11 @@
                         </div>
                     </div>
                 </div>
-
                 <!-- Project 4: GestureClip -->
                 <div class="project-card card-hover reveal" data-reveal="up" data-delay="400" data-category="ai">
-                    <div class="placeholder-img rounded-t-lg">
-                        <i class="fas fa-hand-paper"></i>
-                    </div>
+                    <a href="pages/gestureclip.html" aria-label="GestureClip Project">
+                    <img src="assets/gestureclip.png" alt="GestureClip" class="w-full h-48 object-cover rounded-t-lg fallback-img" onerror="this.outerHTML='<div class=\'placeholder-img rounded-t-lg\'><i class=\'fas fa-hand-paper\'></i></div>'">
+                    </a>
                     <div class="p-6">
                         <h3 class="text-2xl font-bold mb-2" style="color: var(--text-primary)">GestureClip</h3>
                         <p class="text-base mb-4" style="color: var(--text-secondary)">Gesture-based clipboard manager using hand tracking for intuitive copy-paste operations.</p>
@@ -200,11 +187,9 @@
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
-
     <!-- Footer -->
     <footer class="py-12 mt-12" style="background: var(--bg-tertiary); border-top: 1px solid var(--border-color)">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -214,7 +199,6 @@
                     <img src="assets/logo.png" alt="AD Logo" class="h-8 w-auto mx-auto md:mx-0 mb-4">
                     <p class="text-sm" style="color: var(--text-secondary)">Building modern web applications and AI-powered solutions.</p>
                 </div>
-                
                 <!-- Quick Links -->
                 <div>
                     <h4 class="font-bold mb-4" style="color: var(--text-primary)">Quick Links</h4>
@@ -225,7 +209,6 @@
                         <li><a href="index.html#contact" class="hover:underline">Contact</a></li>
                     </ul>
                 </div>
-                
                 <!-- Connect -->
                 <div>
                     <h4 class="font-bold mb-4" style="color: var(--text-primary)">Connect</h4>
@@ -237,24 +220,18 @@
                     </div>
                 </div>
             </div>
-            
             <hr class="border-t my-6" style="border-color: var(--border-color)">
-            
             <div class="flex flex-col md:flex-row justify-between items-center gap-4 text-sm" style="color: var(--text-tertiary)">
                 <p>&copy; 2026 Atul Dhanotiya. All rights reserved.</p>
                 <p>Built with ❤️ using HTML, CSS & JavaScript</p>
             </div>
         </div>
     </footer>
-
     <!-- Back to Top -->
     <button id="back-to-top" class="back-to-top" aria-label="Back to top">
         <i class="fas fa-arrow-up"></i>
     </button>
-
     <!-- Scripts -->
-    <script src="js/darkmode.js"></script>
-    <script src="js/main.js"></script>
-    <script src="js/projects.js"></script>
+    <script src="js/app.js"></script>
 </body>
 </html>
