@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="assets/logo.png" alt="Logo" width="100" />
+  <img src="assets/logo.webp" alt="Logo" width="100" />
   <h1>Atul Dhanotiya | Portfolio</h1>
   <p><strong>BCA Student • Web Developer • AI Enthusiast</strong></p>
 

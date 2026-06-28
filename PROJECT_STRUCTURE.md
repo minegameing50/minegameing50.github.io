@@ -26,14 +26,14 @@ graph TD;
     Pages --> PC["pulsechat.html"];
     Pages --> GC["gestureclip.html"];
     
-    Assets --> Profile["profile.jpg"];
-    Assets --> Logo["logo.png"];
-    Assets --> ProjImgs["Project Screenshots (*.png)"];
+    Assets --> Profile["profile.webp"];
+    Assets --> Logo["logo.webp"];
+    Assets --> ProjImgs["Project Screenshots (*.webp)"];
     
     Assets --> Certs["certificates/"];
-    Certs --> Cert1["microsoft-copilot.png"];
-    Certs --> Cert2["internshala-isp.png"];
-    Certs --> Cert3["build-with-ai.png"];
+    Certs --> Cert1["microsoft-copilot.webp"];
+    Certs --> Cert2["internshala-isp.webp"];
+    Certs --> Cert3["build-with-ai.webp"];
     
     Assets --> Res["resume/"];
     Res --> Resume["resume.pdf"];
