@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Atul Dhanotiya | Portfolio</title>
+  <title>Atul Dhanotiya | Full Stack Web Developer & AI Enthusiast</title>
   <meta name="description" content="Atul Dhanotiya — BCA student, web developer, and AI enthusiast. Explore my projects, skills, achievements, and get in touch.">
   <meta name="author" content="Atul Dhanotiya">
   <meta name="keywords" content="Atul Dhanotiya, portfolio, web developer, AI, BCA, projects, skills">
@@ -11,11 +11,22 @@
   <!-- Open Graph -->
   <meta property="og:title" content="Atul Dhanotiya | Portfolio">
   <meta property="og:description" content="Building modern web applications, AI-powered solutions and real-world projects that make a difference.">
-  <meta property="og:image" content="https://minegameing50.github.io/portfolio/assets/profile.jpg">
+  <meta property="og:image" content="https://minegameing50.github.io/assets/profile.jpg">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://minegameing50.github.io/portfolio">
-  <!-- Tailwind CSS CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
+  <meta property="og:url" content="https://minegameing50.github.io">
+  
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' 'unsafe-eval' https: data:;">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <link rel="canonical" href="https://minegameing50.github.io/">
+    <link rel="preconnect" href="https://cdn.tailwindcss.com">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Atul Dhanotiya | Portfolio">
+    <meta name="twitter:description" content="Explore my portfolio of web applications, AI tools, and real-world projects.">
+    <meta name="twitter:image" content="https://minegameing50.github.io/assets/profile.jpg">
+
+    <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com" defer></script>
   <script>
     tailwind.config = {
       darkMode: 'class',
@@ -27,11 +38,26 @@
     }
   </script>
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer">
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <!-- Custom Stylesheets -->
   <link rel="stylesheet" href="css/main.css">
+
+    <!-- Schema.org -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Atul Dhanotiya",
+      "url": "https://minegameing50.github.io/",
+      "jobTitle": "Full Stack Web Developer & AI Enthusiast",
+      "sameAs": [
+        "https://github.com/minegameing50",
+        "https://www.linkedin.com/in/atul-dhanotiya-648481356"
+      ]
+    }
+    </script>
 </head>
 <body class="font-inter">
   <!-- SCROLL PROGRESS BAR -->
@@ -39,7 +65,7 @@
   <!-- LOADING SCREEN -->
   <div id="loading-screen" class="loading-screen">
     <img src="assets/logo.png" alt="AD" class="loading-logo" width="80">
-    <h2 class="font-semibold text-lg mt-4" style="color: var(--text-primary)">Atul Dhanotiya</h2>
+    <div class="font-semibold text-lg mt-4" style="color: var(--text-primary)">Atul Dhanotiya</div>
     <p class="text-sm mt-2" style="color: var(--text-secondary)">Loading Portfolio...</p>
     <div class="loading-bar-container">
       <div class="loading-bar"></div>
@@ -50,7 +76,7 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16">
       <!-- Logo -->
       <a href="#home">
-        <img src="assets/logo.png" alt="AD" class="h-8 w-auto">
+        <img width="80" height="80" src="assets/logo.png" alt="AD" class="h-8 w-auto">
       </a>
       <!-- Desktop Navigation -->
       <div class="desktop-nav hidden md:flex gap-1">
@@ -154,7 +180,7 @@
         <div class="order-1 lg:order-2">
           <div class="hero-image-container">
             <div class="hero-image-ring"></div>
-            <img src="assets/profile.jpg" alt="Atul Dhanotiya" class="hero-image">
+            <img width="400" height="400" src="assets/profile.jpg" alt="Atul Dhanotiya" class="hero-image">
           </div>
         </div>
       </div>
@@ -373,7 +399,7 @@
         <!-- Project 1 — SmartAttend -->
         <div class="project-card card-hover reveal" data-reveal="up" data-delay="100" data-category="web">
           <a href="pages/smartattend.html" aria-label="SmartAttend Project">
-          <img src="assets/smartattend.png" alt="SmartAttend" class="w-full h-48 object-cover rounded-t-lg fallback-img" onerror="this.outerHTML='<div class=\'placeholder-img rounded-t-lg\'><i class=\'fas fa-image\'></i></div>'">
+          <img width="800" height="450" loading="lazy" src="assets/smartattend.png" alt="SmartAttend" class="w-full h-48 object-cover rounded-t-lg fallback-img" onerror="this.outerHTML='<div class=\'placeholder-img rounded-t-lg\'><i class=\'fas fa-image\'></i></div>'">
           </a>
           <div class="p-6">
             <a href="pages/smartattend.html" aria-label="SmartAttend Project">
@@ -403,7 +429,7 @@
         <!-- Project 2 — BiasGuard AI -->
         <div class="project-card card-hover reveal" data-reveal="up" data-delay="200" data-category="ai">
           <a href="pages/biasguard.html" aria-label="BiasGuard AI Project">
-          <img src="assets/biasguard.png" alt="BiasGuard AI" class="w-full h-48 object-cover rounded-t-lg fallback-img" onerror="this.outerHTML='<div class=\'placeholder-img rounded-t-lg\'><i class=\'fas fa-image\'></i></div>'">
+          <img width="800" height="450" loading="lazy" src="assets/biasguard.png" alt="BiasGuard AI" class="w-full h-48 object-cover rounded-t-lg fallback-img" onerror="this.outerHTML='<div class=\'placeholder-img rounded-t-lg\'><i class=\'fas fa-image\'></i></div>'">
           </a>
           <div class="p-6">
             <a href="pages/biasguard.html" aria-label="BiasGuard AI Project">
@@ -433,7 +459,7 @@
         <!-- Project 3 — PulseChat -->
         <div class="project-card card-hover reveal" data-reveal="up" data-delay="300" data-category="web">
           <a href="pages/pulsechat.html" aria-label="PulseChat Project">
-          <img src="assets/pulsechat.png" alt="PulseChat" class="w-full h-48 object-cover rounded-t-lg fallback-img" onerror="this.outerHTML='<div class=\'placeholder-img rounded-t-lg\'><i class=\'fas fa-image\'></i></div>'">
+          <img width="800" height="450" loading="lazy" src="assets/pulsechat.png" alt="PulseChat" class="w-full h-48 object-cover rounded-t-lg fallback-img" onerror="this.outerHTML='<div class=\'placeholder-img rounded-t-lg\'><i class=\'fas fa-image\'></i></div>'">
           </a>
           <div class="p-6">
             <a href="pages/pulsechat.html" aria-label="PulseChat Project">
@@ -464,7 +490,7 @@
         <!-- Project 4 — GestureClip -->
         <div class="project-card card-hover reveal" data-reveal="up" data-delay="400" data-category="ai">
           <a href="pages/gestureclip.html" aria-label="GestureClip Project">
-            <img src="assets/gestureclip.png" alt="GestureClip" class="w-full h-48 object-cover rounded-t-lg fallback-img" onerror="this.outerHTML='<div class=\'placeholder-img rounded-t-lg\'><i class=\'fas fa-image\'></i></div>'">
+            <img width="800" height="450" loading="lazy" src="assets/gestureclip.png" alt="GestureClip" class="w-full h-48 object-cover rounded-t-lg fallback-img" onerror="this.outerHTML='<div class=\'placeholder-img rounded-t-lg\'><i class=\'fas fa-image\'></i></div>'">
           </a>
           <div class="p-6">
             <a href="pages/gestureclip.html" aria-label="GestureClip Project">
@@ -655,7 +681,7 @@
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-4xl mx-auto">
         <!-- Cert 1 -->
         <div class="certificate-card card-hover reveal" data-reveal="up" data-delay="100">
-          <img src="assets/certificates/microsoft-copilot.png" alt="Introduction to Microsoft 365 Copilot" class="w-full h-40 object-cover fallback-img" onerror="this.outerHTML='<div class=\'placeholder-img\' style=\'min-height: 160px; border-radius: var(--radius) var(--radius) 0 0;\'><i class=\'fas fa-certificate\'></i></div>'">
+          <img width="800" height="450" loading="lazy" src="assets/certificates/microsoft-copilot.png" alt="Introduction to Microsoft 365 Copilot" class="w-full h-40 object-cover fallback-img" onerror="this.outerHTML='<div class=\'placeholder-img\' style=\'min-height: 160px; border-radius: var(--radius) var(--radius) 0 0;\'><i class=\'fas fa-certificate\'></i></div>'">
           <div class="p-4">
             <h3 class="font-bold mb-1" style="color: var(--text-primary)">Introduction to Microsoft 365 Copilot</h3>
             <p class="text-sm mb-1" style="color: var(--text-secondary)">Microsoft</p>
@@ -664,7 +690,7 @@
         </div>
         <!-- Cert 2 -->
         <div class="certificate-card card-hover reveal" data-reveal="up" data-delay="200">
-          <img src="assets/certificates/internshala-isp.png" alt="ISP 58 First Trainings Contest Webinar" class="w-full h-40 object-cover fallback-img" onerror="this.outerHTML='<div class=\'placeholder-img\' style=\'min-height: 160px; border-radius: var(--radius) var(--radius) 0 0;\'><i class=\'fas fa-certificate\'></i></div>'">
+          <img width="800" height="450" loading="lazy" src="assets/certificates/internshala-isp.png" alt="ISP 58 First Trainings Contest Webinar" class="w-full h-40 object-cover fallback-img" onerror="this.outerHTML='<div class=\'placeholder-img\' style=\'min-height: 160px; border-radius: var(--radius) var(--radius) 0 0;\'><i class=\'fas fa-certificate\'></i></div>'">
           <div class="p-4">
             <h3 class="font-bold mb-1" style="color: var(--text-primary)">ISP 58 First Trainings Contest Webinar</h3>
             <p class="text-sm mb-1" style="color: var(--text-secondary)">Internshala</p>
@@ -673,7 +699,7 @@
         </div>
         <!-- Cert 3 -->
         <div class="certificate-card card-hover reveal" data-reveal="up" data-delay="300">
-          <img src="assets/certificates/build-with-ai.png" alt="Build with AI – Solution Challenge" class="w-full h-40 object-cover fallback-img" onerror="this.outerHTML='<div class=\'placeholder-img\' style=\'min-height: 160px; border-radius: var(--radius) var(--radius) 0 0;\'><i class=\'fas fa-certificate\'></i></div>'">
+          <img width="800" height="450" loading="lazy" src="assets/certificates/build-with-ai.png" alt="Build with AI – Solution Challenge" class="w-full h-40 object-cover fallback-img" onerror="this.outerHTML='<div class=\'placeholder-img\' style=\'min-height: 160px; border-radius: var(--radius) var(--radius) 0 0;\'><i class=\'fas fa-certificate\'></i></div>'">
           <div class="p-4">
             <h3 class="font-bold mb-1" style="color: var(--text-primary)">Build with AI – Solution Challenge</h3>
             <p class="text-sm mb-1" style="color: var(--text-secondary)">Hack2skill</p>
@@ -705,14 +731,14 @@
           <div class="flex items-center gap-4 card-hover flex-1">
             <div class="skill-icon"><i class="fas fa-envelope"></i></div>
             <div>
-              <h4 class="font-semibold" style="color: var(--text-primary)">Email</h4>
+              <h4 class="font-semibold" style="color: var(--text-primary)">Email</h3>
               <a href="mailto:atuldhanotiya7@gmail.com" class="text-sm" style="color: var(--text-secondary)">atuldhanotiya7@gmail.com</a>
             </div>
           </div>
           <div class="flex items-center gap-4 card-hover flex-1">
             <div class="skill-icon"><i class="fas fa-phone"></i></div>
             <div>
-              <h4 class="font-semibold" style="color: var(--text-primary)">Phone</h4>
+              <h4 class="font-semibold" style="color: var(--text-primary)">Phone</h3>
               <a href="tel:+919669812090" class="text-sm" style="color: var(--text-secondary)">+91 9669812090</a>
             </div>
           </div>
@@ -720,7 +746,7 @@
         <div class="flex items-center justify-center gap-4 card-hover mt-6">
           <div class="skill-icon"><i class="fas fa-map-marker-alt"></i></div>
           <div>
-            <h4 class="font-semibold" style="color: var(--text-primary)">Location</h4>
+            <h4 class="font-semibold" style="color: var(--text-primary)">Location</h3>
             <p class="text-sm" style="color: var(--text-secondary)">Suwasra, Madhya Pradesh</p>
           </div>
         </div>
@@ -751,12 +777,12 @@
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
         <!-- Col 1 — Brand -->
         <div>
-          <img src="assets/logo.png" alt="AD" class="h-8 w-auto mb-3">
+          <img width="80" height="80" src="assets/logo.png" alt="AD" class="h-8 w-auto mb-3">
           <p class="text-sm" style="color: var(--text-secondary)">Building modern web applications and AI-powered solutions.</p>
         </div>
         <!-- Col 2 — Quick Links -->
         <div>
-          <h4 class="font-semibold mb-3" style="color: var(--text-primary)">Quick Links</h4>
+          <h4 class="font-semibold mb-3" style="color: var(--text-primary)">Quick Links</h3>
           <ul class="space-y-2">
             <li><a href="#home" class="text-sm transition hover:underline" style="color: var(--text-secondary)">Home</a></li>
             <li><a href="#about" class="text-sm transition hover:underline" style="color: var(--text-secondary)">About</a></li>
@@ -766,7 +792,7 @@
         </div>
         <!-- Col 3 — Connect -->
         <div>
-          <h4 class="font-semibold mb-3" style="color: var(--text-primary)">Connect</h4>
+          <h4 class="font-semibold mb-3" style="color: var(--text-primary)">Connect</h3>
           <ul class="space-y-2">
             <li>
               <a href="https://github.com/minegameing50" target="_blank" class="text-sm transition hover:underline" style="color: var(--text-secondary)">

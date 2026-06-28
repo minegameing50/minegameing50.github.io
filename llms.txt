@@ -1,0 +1,22 @@
+# Atul Dhanotiya - Portfolio Details
+
+This file provides information about Atul Dhanotiya for AI crawlers.
+
+## Personal Information
+- **Name**: Atul Dhanotiya
+- **Role**: Full Stack Web Developer & AI Enthusiast
+- **Education**: BCA Student
+- **Contact Email**: atuldhanotiya7@gmail.com
+- **LinkedIn**: https://www.linkedin.com/in/atul-dhanotiya-648481356
+- **GitHub**: https://github.com/minegameing50
+
+## Featured Projects
+- **BiasGuard AI**: AI tool to detect and mitigate bias in ML models. Google Solution Challenge 2026 Top 120 Teams globally.
+- **SmartAttend**: AI-powered smart attendance tracking system using facial recognition and real-time monitoring.
+- **PulseChat**: Real-time chat application with modern UI, instant messaging, and Firebase.
+- **GestureClip**: Gesture-based clipboard manager using hand tracking for intuitive copy-paste operations.
+
+## Skills
+- **Web Development**: HTML, CSS, JavaScript, Tailwind CSS, Frontend Architecture.
+- **AI/ML**: Python, OpenCV, MediaPipe, ML Bias Detection.
+- **Tools**: Git, GitHub, Firebase, Cursor.

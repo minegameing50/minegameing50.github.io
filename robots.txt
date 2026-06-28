@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Disallow specific bot access if needed, but allow AI bots to read llms.txt
+User-agent: GPTBot
+Allow: /
+
+Sitemap: https://minegameing50.github.io/sitemap.xml
